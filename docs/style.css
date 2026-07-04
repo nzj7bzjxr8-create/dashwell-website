@@ -138,6 +138,17 @@ img { max-width: 100%; height: auto; }
   margin-bottom: 36px;
 }
 .section-lead { text-align: center; color: var(--muted); margin: -20px auto 32px; max-width: 640px; }
+.section-kicker {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 28px 0 12px;
+}
+.section-kicker:first-of-type { margin-top: 0; }
+.section-note { text-align: center; color: var(--muted); font-size: 15px; margin-top: 24px; }
 
 /* ---------- Feature cards ---------- */
 .features {
@@ -153,6 +164,46 @@ img { max-width: 100%; height: auto; }
 }
 .card h3 { font-size: 19px; margin-bottom: 8px; }
 .card p { color: var(--muted); }
+
+/* ---------- Platform cards (index) ---------- */
+.platform-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+.platform-card { text-align: center; }
+.platform-badge {
+  color: #059669;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.platform-shot {
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+.platform-card p:not(.platform-badge) { color: var(--muted); }
+
+/* ---------- Screenshot gallery (index) ---------- */
+.screenshot-rail {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+.screenshot-figure img {
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  display: block;
+}
+.screenshot-figure figcaption {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 8px;
+}
 
 /* ---------- Legal / Support buttons row on index ---------- */
 .legal-cta {

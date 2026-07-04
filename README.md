@@ -1,6 +1,6 @@
 # findash-website
 
-Standalone **FinDash** product site — landing page, privacy policy, terms, support, and user guide.
+Standalone **Dashwell Portfolio Creator** (formerly FinDash) product site — landing page, privacy policy, terms, support, and user guide.
 Branded to match [dashwellsolutions.com](https://dashwellsolutions.com).
 
 Published via **GitHub Pages** from the `docs/` folder on the **`master`** branch:
@@ -24,7 +24,7 @@ Published via **GitHub Pages** from the `docs/` folder on the **`master`** branc
 
 # 2. Commit and push to the master branch
 git add -A
-git commit -m "Update FinDash site"
+git commit -m "Update Dashwell Portfolio Creator site"
 git push                 # branch: master
 
 # 3. GitHub Pages rebuilds docs/ automatically — live in ~1 minute.
