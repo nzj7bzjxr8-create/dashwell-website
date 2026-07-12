@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Dashwell Portfolio Creator</title>
+    <link rel="canonical" href="https://dashwellsolutions.com/findash/privacy">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="https://dashwellsolutions.com"><img class="brand-logo" src="../assets/dashwell-logo.png" alt="Dashwell Solutions"></a>
+            <nav><ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="guide.html">User Guide</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul></nav>
+        </div>
+    </header>
+
+    <main class="container content">
+        <p><a href="../index.html">← Back to Dashwell</a></p>
+        <h1>Privacy Policy</h1>
+        <p><strong>Last Updated:</strong> May 2026</p>
+
+        <section>
+            <h2>Data Controller</h2>
+            <p><strong>Dashwell LLC</strong>, a Virginia limited liability company, is the data controller for Dashwell Portfolio Creator and DashCSV.</p>
+            <ul>
+                <li><strong>Legal entity:</strong> Dashwell LLC</li>
+                <li><strong>Trade name:</strong> Dashwell Solutions</li>
+                <li><strong>Mailing address:</strong> Northwest Registered Agent LLC, 8401 Mayland Dr Ste A, Henrico, VA 23294-4648</li>
+                <li><strong>Contact email:</strong> <a href="mailto:info@dashwellsolutions.com">info@dashwellsolutions.com</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Overview</h2>
+            <p>This Privacy Policy applies to <strong>Dashwell Portfolio Creator</strong> and <strong>DashCSV</strong> (the "Apps"), both published by Dashwell LLC. This Privacy Policy explains how we handle information when you use either App.</p>
+            <p><strong>Core Principle:</strong> The Apps are local-first applications. Your financial data stays on your device and is not transmitted to our servers.</p>
+        </section>
+
+        <section>
+            <h2>1. Data Collection</h2>
+            <p>The Apps collect minimal data:</p>
+            <ul>
+                <li><strong>Data You Import:</strong> Portfolio positions, transactions, and watchlist data that you import via CSV files. This data is stored locally on your device only.</li>
+                <li><strong>Market Data:</strong> If you configure optional API keys (Alpha Vantage, Tiingo, Massive, FMP), market quotes are fetched from those services. See their privacy policies for details.</li>
+                <li><strong>Settings &amp; Preferences:</strong> Your dashboard layout, widget configurations, and preferences are stored locally on your device.</li>
+            </ul>
+            <p><strong>What We Do NOT Collect:</strong></p>
+            <ul>
+                <li>Usage analytics or behavioral tracking</li>
+                <li>Hardware information or device identifiers</li>
+                <li>Location data</li>
+                <li>Browsing history or network activity</li>
+                <li>Your email address or personal information (unless you contact support)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. Data Storage</h2>
+            <p><strong>Local Storage:</strong> All financial data is stored in a local SQLite database on your device:</p>
+            <ul>
+                <li><strong>Dashwell Portfolio Creator (macOS):</strong> <code>~/Library/Application Support/Dashwell Portfolio Creator/findash.db</code></li>
+                <li><strong>DashCSV (macOS):</strong> <code>~/Library/Application Support/DashCSV/dashcsv.db</code></li>
+                <li><strong>iPadOS:</strong> App Documents directory (sandboxed)</li>
+            </ul>
+            <p><strong>Encryption:</strong> Optional files can be password-protected. Passwords are stored in macOS Keychain / iPadOS Secure Enclave.</p>
+            <p><strong>API Keys:</strong> Optional market data API keys are stored in macOS Keychain (not transmitted to us).</p>
+            <p><strong>iCloud Sync (Optional):</strong> You may optionally enable iCloud sync to synchronize your database across devices. This is user-controlled and disabled by default. Encrypted data remains encrypted when synced to iCloud.</p>
+        </section>
+
+        <section>
+            <h2>3. Data Sharing</h2>
+            <p>The Apps do not share your data with third parties, except:</p>
+            <ul>
+                <li><strong>Market Data APIs:</strong> If you configure API keys, market data requests are sent to your chosen provider (Alpha Vantage, Tiingo, Massive, FMP). You control which providers receive your requests. Review their privacy policies.</li>
+                <li><strong>Apple iCloud:</strong> If you enable optional iCloud sync, your encrypted database is stored on Apple's servers. You can disable iCloud sync at any time.</li>
+                <li><strong>CSV Imports:</strong> Broker CSV data is imported by you and remains on your device.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Your Rights &amp; Control</h2>
+            <ul>
+                <li><strong>Export Your Data:</strong> You can export your data at any time via CSV or other formats.</li>
+                <li><strong>Delete Your Data:</strong> You can delete any data locally from your device. Clearing app data removes the database entirely.</li>
+                <li><strong>Disable API Calls:</strong> You can remove API key configurations to stop sending data to market data providers.</li>
+                <li><strong>Disable iCloud Sync:</strong> You can turn off iCloud sync in settings to keep all data local.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Data Security</h2>
+            <p>We implement security measures appropriate for a local-first application:</p>
+            <ul>
+                <li>Optional password protection for files</li>
+                <li>Keychain storage for sensitive credentials (macOS/iPadOS standard)</li>
+                <li>HTTPS for all API calls (when API keys are configured)</li>
+                <li>No transmission of data to our servers</li>
+            </ul>
+            <p><strong>Responsibility:</strong> You are responsible for maintaining your device security, password strength, and protecting your Keychain access.</p>
+        </section>
+
+        <section>
+            <h2>6. Third-Party Services</h2>
+            <p>If you configure optional market data API keys, data is shared with:</p>
+            <ul>
+                <li><strong>Alpha Vantage</strong> - https://www.alphavantage.co/</li>
+                <li><strong>Tiingo</strong> - https://www.tiingo.com/</li>
+                <li><strong>Massive</strong> - https://www.massive.com/</li>
+                <li><strong>FMP (Financial Modeling Prep)</strong> - https://financialmodelingprep.com/</li>
+                <li><strong>Apple iCloud</strong> (if sync enabled) - https://www.apple.com/icloud/</li>
+            </ul>
+            <p>Review their privacy policies before using their services.</p>
+        </section>
+
+        <section>
+            <h2>7. Children's Privacy</h2>
+            <p>The Apps are not intended for children under 13. We do not knowingly collect information from children under 13.</p>
+        </section>
+
+        <section>
+            <h2>8. Contact Us</h2>
+            <p>If you have questions about this Privacy Policy or our privacy practices:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:info@dashwellsolutions.com">info@dashwellsolutions.com</a></li>
+                <li><strong>Support:</strong> <a href="support.html">Dashwell Portfolio Creator support</a> or <a href="https://dashwellsolutions.com/dashcsv/support">DashCSV support</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>9. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy periodically. Changes will be posted on this page with an updated "Last Updated" date.</p>
+        </section>
+
+        <hr>
+
+        <p style="color:#6e6e73;font-size:14px;">
+            <strong>Compliance:</strong> This Privacy Policy complies with Apple App Store requirements, GDPR, and CCPA standards. All data remains on your device by default.
+        </p>
+        <p><a href="../index.html">← Back to Dashwell</a></p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="footer-legal">Dashwell Solutions is a trade name of Dashwell LLC, a Virginia limited liability company.</p>
+            <p class="footer-copy">© 2026 Dashwell LLC · Published by <a href="https://dashwellsolutions.com">Dashwell Solutions</a> · <a href="mailto:info@dashwellsolutions.com">info@dashwellsolutions.com</a></p>
+            <p class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a> · <a href="guide.html">User Guide</a></p>
+        </div>
+    </footer>
+</body>
+</html>

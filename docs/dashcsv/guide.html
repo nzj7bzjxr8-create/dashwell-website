@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guide — DashCSV</title>
+    <link rel="canonical" href="https://dashwellsolutions.com/dashcsv/guide">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="https://dashwellsolutions.com"><img class="brand-logo" src="../assets/dashwell-logo.png" alt="Dashwell Solutions"></a>
+            <nav><ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="guide.html">User Guide</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul></nav>
+        </div>
+    </header>
+
+    <main class="container content">
+        <p><a href="index.html">← Back to DashCSV</a></p>
+        <h1>DashCSV User Guide</h1>
+        <p><strong>Version:</strong> 4.0.0</p>
+        <p><strong>Platforms:</strong> macOS 15.6+</p>
+
+        <section id="getting-started">
+            <h2>Getting Started</h2>
+            <p>DashCSV helps you manage and visualize your investment portfolio across multiple brokers.</p>
+            <ol>
+                <li>Launch DashCSV from Applications (macOS)</li>
+                <li>The app will guide you through initial setup</li>
+                <li>Import your first portfolio CSV file from your broker</li>
+            </ol>
+        </section>
+
+        <section id="importing">
+            <h2>Importing Portfolio Data</h2>
+            <p>To import your positions, transactions, or watchlist:</p>
+            <ol>
+                <li>Go to <strong>File → Import</strong> (macOS) or tap the <strong>+</strong> button (iPad)</li>
+                <li>Select your broker or CSV file</li>
+                <li>Choose import type: Positions, Transactions, or Watchlist</li>
+                <li>Review the preview and click Import</li>
+            </ol>
+            <p><strong>Supported Brokers:</strong> Fidelity (verified), Schwab (verified), E*TRADE, Interactive Brokers, and others (via CSV)</p>
+        </section>
+
+        <section id="dashboard">
+            <h2>Dashboard &amp; Widgets</h2>
+            <p>Customize your dashboard by adding widgets:</p>
+            <ul>
+                <li><strong>Portfolio Summary</strong> - Total value, gain/loss, allocation</li>
+                <li><strong>Top Performers</strong> - Best and worst performing positions</li>
+                <li><strong>Holdings</strong> - Detailed position list with prices</li>
+                <li><strong>Upcoming Events</strong> - Earnings, dividends, options</li>
+                <li><strong>Watchlist</strong> - Custom tracked symbols</li>
+            </ul>
+            <p>Drag widgets to rearrange. Long-press to remove or customize.</p>
+        </section>
+
+        <section id="settings">
+            <h2>Settings &amp; Configuration</h2>
+            <ul>
+                <li><strong>API Keys</strong> - Configure market data providers for live quotes</li>
+                <li><strong>Accounts</strong> - Manage your linked broker accounts</li>
+                <li><strong>iCloud Sync</strong> - Enable sync across your Apple devices (macOS and iPad)</li>
+                <li><strong>Data Management</strong> - Export or clear your data</li>
+            </ul>
+        </section>
+
+        <section id="api-keys">
+            <h2>Configuring Market Data API Keys</h2>
+            <p>To get live market quotes, you can optionally configure API keys from market data providers:</p>
+            <ul>
+                <li><strong>Alpha Vantage</strong> - https://www.alphavantage.co/ (free tier available)</li>
+                <li><strong>Tiingo</strong> - https://www.tiingo.com/ (free tier available)</li>
+                <li><strong>Massive</strong> - https://www.massive.com/ (free tier available)</li>
+                <li><strong>FMP (Financial Modeling Prep)</strong> - https://financialmodelingprep.com/ (free tier available)</li>
+            </ul>
+            <p><strong>Steps:</strong></p>
+            <ol>
+                <li>Sign up for a provider account</li>
+                <li>Get your API key</li>
+                <li>In DashCSV Settings, go to API Keys</li>
+                <li>Enter your key for your chosen provider</li>
+                <li>DashCSV will fetch live quotes automatically</li>
+            </ol>
+            <p><em>API keys are stored securely in macOS Keychain and are never transmitted to us.</em></p>
+        </section>
+
+        <section id="data-security">
+            <h2>Data Security &amp; Privacy</h2>
+            <p>Your data security is our priority:</p>
+            <ul>
+                <li><strong>Local Storage:</strong> All data stored on your device, not our servers</li>
+                <li><strong>Password Protection:</strong> Optionally password-protect exported files</li>
+                <li><strong>iCloud Sync:</strong> If enabled, data is encrypted before uploading to iCloud</li>
+                <li><strong>API Keys:</strong> Stored in macOS Keychain (not accessible to us)</li>
+            </ul>
+            <p>For complete details, see our <a href="privacy.html">Privacy Policy</a>.</p>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>Can I use DashCSV offline?</h3>
+                <p>Yes! DashCSV works completely offline. Live market data requires internet and configured API keys, but all your local data is always accessible.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I export my data?</h3>
+                <p>Go to Settings → Data Management → Export. You can export as CSV for backup or use in other tools.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I sync between Mac and iPad?</h3>
+                <p>Yes. Enable iCloud sync in Settings on both devices to synchronize your portfolio data. This is optional and can be disabled anytime.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What CSV format does DashCSV expect?</h3>
+                <p>DashCSV supports CSV files from major brokers (Fidelity, Schwab, etc.). You can also use a generic CSV format with columns: Symbol, Quantity, Price, Account. In Custom Mode, you can use any CSV structure — DashCSV will let you map columns to build your custom dashboard.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I delete individual positions?</h3>
+                <p>Yes. Select a position or data item and click Delete, or use Settings → Data Management to bulk manage your data.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How often is market data updated?</h3>
+                <p>Market data depends on your API provider's update frequency. Most providers update quotes during market hours (every 1–15 minutes).</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is there a limit to how much data I can import?</h3>
+                <p>No. DashCSV uses SQLite which can handle millions of positions and transactions. Performance depends on your device's storage.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if I need help?</h3>
+                <p>Visit our <a href="support.html">Support page</a> for contact options and additional resources.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <p><small>For detailed documentation and calculations, visit the <a href="index.html">home page</a> or contact <a href="support.html">support</a>.</small></p>
+        <p><a href="index.html">← Back to DashCSV</a></p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="footer-legal">Dashwell Solutions is a trade name of Dashwell LLC, a Virginia limited liability company.</p>
+            <p class="footer-copy">© 2026 Dashwell LLC · Published by <a href="https://dashwellsolutions.com">Dashwell Solutions</a> · <a href="mailto:info@dashwellsolutions.com">info@dashwellsolutions.com</a></p>
+            <p class="footer-links"><a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a> · <a href="guide.html">User Guide</a></p>
+        </div>
+    </footer>
+</body>
+</html>
