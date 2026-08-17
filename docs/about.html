@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About — Dashwell</title>
-    <meta name="description" content="Dashwell Solutions builds focused, privacy-first financial tools for individual investors.">
-    <link rel="canonical" href="https://dashwellsolutions.com/about">
+    <title>About Dashwell Solutions — Dashwell Portfolio Creator &amp; DashCSV</title>
+    <meta name="description" content="Dashwell LLC builds focused, privacy-first financial tools for individual investors. Learn about Dashwell Portfolio Creator and DashCSV portfolio dashboard apps.">
+    <link rel="canonical" href="https://nzj7bzjxr8-create.github.io/dashwell-website/about.html">
+    <meta property="og:title" content="About Dashwell Solutions — Dashwell Portfolio Creator &amp; DashCSV">
+    <meta property="og:description" content="Dashwell LLC builds focused, privacy-first financial tools for individual investors. Learn about Dashwell Portfolio Creator and DashCSV portfolio dashboard apps.">
+    <meta property="og:url" content="https://nzj7bzjxr8-create.github.io/dashwell-website/about.html">
+    <meta property="og:image" content="https://nzj7bzjxr8-create.github.io/dashwell-website/assets/dashwell-logo.png">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="container nav">
-            <a class="brand" href="https://dashwellsolutions.com"><img class="brand-logo" src="assets/dashwell-logo.png" alt="Dashwell Solutions"></a>
+            <a class="brand" href="index.html"><img class="brand-logo" src="assets/dashwell-logo.png" alt="Dashwell Solutions"></a>
             <nav><ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="compare/">Money</a></li>
+                <li><a href="sheetstand/">Music</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul></nav>
         </div>
     </header>
-
-    <section class="hero">
+    <section class="page-hero">
         <h1>About Dashwell Solutions</h1>
         <p class="tagline">We build focused, privacy-first financial tools for individual investors.</p>
     </section>
@@ -30,28 +35,55 @@
         <div class="container">
             <h2 class="section-title">Our Products</h2>
             <p class="section-lead">Focused apps, one mission — your data stays on your device.</p>
-            <div class="features">
-                <div class="card">
+            <div class="product-tiles">
+                <a class="product-tile" href="findash/">
+                    <img class="product-tile-icon" src="assets/findash-icon.png" alt="Dashwell Portfolio Creator app icon" width="96" height="96">
                     <h3>Dashwell Portfolio Creator</h3>
                     <p class="platform-badge">macOS &amp; iPad · App Store</p>
                     <p>Portfolio management &amp; financial dashboard for macOS. Import positions from any broker, track tax lots, monitor dividends and earnings.</p>
-                    <div class="btn-row" style="margin-top:16px;">
-                        <a class="btn btn-outline" href="findash/index.html">Learn more</a>
-                    </div>
-                </div>
-                <div class="card">
+                    <span class="btn btn-outline">Learn more</span>
+                </a>
+                <a class="product-tile" href="dashcsv/">
+                    <img class="product-tile-icon" src="assets/dashcsv-icon.png" alt="DashCSV app icon" width="96" height="96">
                     <h3>DashCSV</h3>
                     <p class="platform-badge">macOS · App Store</p>
                     <p>The established portfolio dashboard for macOS. Import broker CSVs, track tax lots, and monitor dividends and earnings under the DashCSV App Store brand.</p>
-                    <div class="btn-row" style="margin-top:16px;">
-                        <a class="btn btn-outline" href="dashcsv/index.html">Learn more</a>
-                    </div>
-                </div>
-                <div class="card">
+                    <span class="btn btn-outline">Learn more</span>
+                </a>
+                <a class="product-tile" href="dashwell/">
+                    <img class="product-tile-icon" src="assets/dashwell-icon.png" alt="Dashwell app icon" width="96" height="96">
                     <h3>Dashwell: Your Money Assistant</h3>
                     <p class="platform-badge">Mac, iPad &amp; iPhone · Coming Soon</p>
                     <p>Apple Pay and Wallet tracking on iPhone, plus portfolio, banking, and custom dashboards — all synced across your devices with iCloud.</p>
-                </div>
+                    <span class="btn btn-outline">Learn more</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background:var(--soft);">
+        <div class="container">
+            <h2 class="section-title">Not sure which app?</h2>
+            <p class="section-lead">Compare platforms, features, and pricing side by side for DashCSV, Dashwell Portfolio, and Dashwell.</p>
+            <div class="btn-row" style="margin-top:8px;">
+                <a class="btn btn-primary" href="compare/">See full comparison</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Also from Dashwell LLC</h2>
+            <p class="section-kicker">Music · Under development</p>
+            <p class="section-lead">A second product family — not a finance app.</p>
+            <div class="product-tiles single-center">
+                <a class="product-tile" href="sheetstand/">
+                    <img class="product-tile-icon" src="assets/sheetstand-icon.png" alt="SheetStand app icon" width="96" height="96">
+                    <h3>SheetStand</h3>
+                    <p class="platform-badge">iPad, Mac &amp; iPhone · Coming Soon</p>
+                    <p>Local-first PDF sheet-music library and full-screen performance viewer — scan, organize, and play from the stand.</p>
+                    <span class="btn btn-outline">Learn more</span>
+                </a>
             </div>
         </div>
     </section>
@@ -65,7 +97,7 @@
                     <p>Your financial data never leaves your device. No accounts, no cloud sync required.</p>
                 </div>
                 <div class="card">
-                    <h3>📂 Data You Control</h3>
+                    <h3>📊 Data You Control</h3>
                     <p>Import your own CSV files from any broker. No proprietary formats or lock-in.</p>
                 </div>
                 <div class="card">
@@ -76,12 +108,11 @@
             <p class="section-note">Questions? <a href="contact.html">Contact us</a> or email <a href="mailto:info@dashwellsolutions.com">info@dashwellsolutions.com</a></p>
         </div>
     </section>
-
     <footer class="site-footer">
         <div class="container">
             <p class="footer-legal">Dashwell Solutions is a trade name of Dashwell LLC, a Virginia limited liability company.</p>
-            <p class="footer-copy">© 2026 Dashwell LLC · Published by <a href="https://dashwellsolutions.com">Dashwell Solutions</a> · <a href="mailto:info@dashwellsolutions.com">info@dashwellsolutions.com</a></p>
-            <p class="footer-links"><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="findash/index.html">Dashwell Portfolio Creator</a> · <a href="dashcsv/index.html">DashCSV</a></p>
+            <p class="footer-copy">© 2026 Dashwell LLC · Published by <a href="index.html">Dashwell Solutions</a> · <a href="mailto:info@dashwellsolutions.com">info@dashwellsolutions.com</a></p>
+            <p class="footer-links"><a href="index.html">Home</a> · <a href="compare/">Compare</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="findash/">Dashwell Portfolio Creator</a> · <a href="dashcsv/">DashCSV</a> · <a href="dashwell/">Dashwell</a> · <a href="sheetstand/">SheetStand</a></p>
         </div>
     </footer>
 </body>

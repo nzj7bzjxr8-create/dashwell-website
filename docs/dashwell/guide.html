@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guide — Dashwell: Your Money Assistant</title>
+    <meta name="description" content="User guide for Dashwell: portfolio, stocks, banking, Apple Wallet capture, and custom CSV dashboards on Mac, iPad, and iPhone.">
+    <link rel="canonical" href="https://nzj7bzjxr8-create.github.io/dashwell-website/dashwell/guide.html">
+    <meta property="og:title" content="User Guide — Dashwell: Your Money Assistant">
+    <meta property="og:description" content="User guide for Dashwell: portfolio, stocks, banking, Apple Wallet capture, and custom CSV dashboards on Mac, iPad, and iPhone.">
+    <meta property="og:url" content="https://nzj7bzjxr8-create.github.io/dashwell-website/dashwell/guide.html">
+    <meta property="og:image" content="https://nzj7bzjxr8-create.github.io/dashwell-website/assets/dashwell-logo.png">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/dashwell-logo.png" alt="Dashwell Solutions"></a>
+            <nav><ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../compare/">Money</a></li>
+                <li><a href="../sheetstand/">Music</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul></nav>
+        </div>
+    </header>
+    <main class="container content">
+        <p><a href="index.html">← Back to Dashwell</a></p>
+        <h1>Dashwell User Guide</h1>
+        <p><strong>Platforms:</strong> macOS 15.6+ &nbsp;·&nbsp; iPadOS 17.0+ &nbsp;·&nbsp; iPhone</p>
+        <p>Dashwell brings together everything Dashwell LLC's apps have offered separately — portfolio tracking, custom CSV dashboards, and a full banking/budgeting mode with Apple Wallet capture — in one universal app for Mac, iPad, and iPhone.</p>
+
+        <section id="modes">
+            <h2>Four Modes, One App</h2>
+            <ul>
+                <li><strong>Portfolio</strong> — a consolidated, cross-mode dashboard: the "look here first" view pulling in widgets from Stocks, Banking, and Custom.</li>
+                <li><strong>Stocks</strong> — broker holdings, positions, options, dividends, and reports (this is the mode DashCSV and Dashwell Portfolio Creator built their name on).</li>
+                <li><strong>Banking</strong> — cards and bank statements: a checkbook-style register per account, categorization, monthly/annual budgets, and reconcile — with optional automatic <strong>Apple Wallet</strong> capture on iPhone.</li>
+                <li><strong>Custom</strong> — turn any CSV into its own dashboard (inventories, collections, project trackers, and more). Included at no extra cost.</li>
+            </ul>
+        </section>
+
+        <section id="getting-started">
+            <h2>Getting Started</h2>
+            <ol>
+                <li>Launch Dashwell on Mac, iPad, or iPhone</li>
+                <li><strong>Mac:</strong> if Dashwell Portfolio Creator or DashCSV is installed, portfolio, Custom Modes, and API keys copy over automatically on first launch</li>
+                <li><strong>iPad / iPhone:</strong> open your saved <code>.findash</code> or <code>.dashcsv</code> file (AirDrop, Files, or Import), or use Import from DashCSV or Dashwell Portfolio</li>
+                <li>Otherwise, import your first CSV — a broker positions export, a bank/card statement, or any data file — and Dashwell routes it to the right mode</li>
+            </ol>
+        </section>
+
+        <section id="importing">
+            <h2>Importing Your Data</h2>
+            <p>Every mode is CSV-first — nothing requires a purchase or a cloud account to get started:</p>
+            <ul>
+                <li><strong>Stocks:</strong> import broker positions (Fidelity and Schwab auto-detected) and optional transaction history</li>
+                <li><strong>Banking:</strong> import a card or bank statement CSV — Apple Card exports are auto-detected — or connect Apple Wallet on iPhone for automatic capture</li>
+                <li><strong>Custom:</strong> import any CSV; Dashwell detects column types and a unique-key column automatically</li>
+            </ul>
+        </section>
+
+        <section id="wallet-sync">
+            <h2>Apple Wallet Bank Sync &amp; iCloud Sync</h2>
+            <p>On <strong>iPhone</strong>, connect Bank Sync (Settings → Bank Sync) to download new Apple Card, Apple Cash, and Apple Savings activity into Banking mode automatically, using Apple's on-device FinanceKit framework — nothing leaves your device during capture. It's included with Dashwell, no separate purchase.</p>
+            <p>Enable optional <strong>iCloud Sync</strong> to keep Portfolio, Stocks, Banking, and Custom data aligned across your devices — off by default. A single <strong>sync status pill</strong>, visible from every screen, shows sync status and runs a one-tap Sync All (on iPhone, Wallet capture first, then iCloud). iCloud keeps your data in sync; each device can arrange its own widgets — a wide Mac overview and a compact iPhone glance from the same holdings. API keys stay per device.</p>
+        </section>
+
+        <section id="settings">
+            <h2>Settings &amp; Configuration</h2>
+            <ul>
+                <li><strong>API Keys</strong> — optional market data providers for live quotes (Alpha Vantage, Tiingo, Massive, FMP — all free-tier)</li>
+                <li><strong>Accounts &amp; Registers</strong> — manage broker accounts (Stocks) and banking registers, including hide/deactivate/delete with a totals-inclusion toggle</li>
+                <li><strong>iCloud Sync</strong> — create or join a cloud environment; choose Editor or Viewer</li>
+                <li><strong>Bank Sync</strong> (iPhone) — connect, pause, disconnect, or reset Apple Wallet capture</li>
+            </ul>
+        </section>
+
+        <section id="data-security">
+            <h2>Data Security &amp; Privacy</h2>
+            <ul>
+                <li><strong>Local-first:</strong> all data stored on your device, not our servers</li>
+                <li><strong>Apple Wallet data</strong> is processed entirely on-device via Apple's FinanceKit — Dashwell never sees or transmits it</li>
+                <li><strong>iCloud Sync</strong>, when enabled, uses your own private CloudKit container</li>
+                <li><strong>API keys</strong> are stored in Keychain, never transmitted to us</li>
+            </ul>
+            <p>For complete details, see our <a href="../privacy.html">Privacy Policy</a> — one policy covers Dashwell, Dashwell Portfolio Creator, and DashCSV.</p>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Can I use Dashwell offline?</h3>
+                <p>Yes. Every mode works completely offline — live market data and Apple Wallet sync need a connection, but your local data is always accessible.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is Custom Mode a separate purchase?</h3>
+                <p>No. Dashwell is a single paid-up-front app — Custom Mode, the ETL Connector (Excel/SQLite/messy-CSV import), and Apple Wallet Bank Sync are all included, nothing to unlock separately.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What happened to FinDash and DashCSV?</h3>
+                <p>Dashwell Portfolio Creator (formerly FinDash) and DashCSV remain available and supported. Dashwell is the newer, universal app that brings their capabilities together with iPhone support and a full Banking mode. On <strong>Mac</strong>, Dashwell copies portfolio, Custom Modes, and API keys automatically on first launch if a sibling app is installed. On <strong>iPad and iPhone</strong>, open your saved <code>.findash</code> or <code>.dashcsv</code> file or use Import from DashCSV or Dashwell Portfolio. Everything is included — Dashwell is paid up front with no feature unlocks.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if I need help?</h3>
+                <p>Visit our <a href="../contact.html">Contact page</a> for contact options and additional resources.</p>
+            </div>
+        </section>
+        <p><small>For pricing and platform details, visit the <a href="index.html">Dashwell page</a> or contact <a href="../contact.html">support</a>.</small></p>
+        <p><a href="index.html">← Back to Dashwell</a></p>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            <p class="footer-legal">Dashwell Solutions is a trade name of Dashwell LLC, a Virginia limited liability company.</p>
+            <p class="footer-copy">© 2026 Dashwell LLC · Published by <a href="../index.html">Dashwell Solutions</a> · <a href="mailto:info@dashwellsolutions.com">info@dashwellsolutions.com</a></p>
+            <p class="footer-links"><a href="../index.html">Home</a> · <a href="../compare/">Compare</a> · <a href="../about.html">About</a> · <a href="../contact.html">Contact</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="index.html">Dashwell</a> · <a href="guide.html">User Guide</a></p>
+        </div>
+    </footer>
+</body>
+</html>
