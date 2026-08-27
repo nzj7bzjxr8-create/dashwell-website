@@ -263,6 +263,11 @@ img { max-width: 100%; height: auto; }
   border-color: var(--ink);
   box-shadow: 0 0 0 3px rgba(29,29,31,0.08);
 }
+.form-note {
+  font-size: 13px;
+  margin-top: 16px;
+  color: var(--muted);
+}
 
 /* ---------- Home hero banner (matches WP cover) ---------- */
 .hero-banner {
