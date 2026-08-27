@@ -279,7 +279,7 @@ img { max-width: 100%; height: auto; }
   color: var(--muted);
 }
 
-/* ---------- Product tiles (Home / About / SheetStand teaser) ---------- */
+/* ---------- Product tiles (Home / About / music teasers) ---------- */
 .product-tiles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

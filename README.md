@@ -20,6 +20,7 @@ under the `/dashwell-website/` base path.
 | Contact | https://nzj7bzjxr8-create.github.io/dashwell-website/contact.html |
 | Compare | https://nzj7bzjxr8-create.github.io/dashwell-website/compare/ |
 | SheetStand | https://nzj7bzjxr8-create.github.io/dashwell-website/sheetstand/ |
+| FormatStand | https://nzj7bzjxr8-create.github.io/dashwell-website/formatstand/ |
 | Dashwell | https://nzj7bzjxr8-create.github.io/dashwell-website/dashwell/ |
 | ↳ User Guide | https://nzj7bzjxr8-create.github.io/dashwell-website/dashwell/guide.html |
 | Privacy (shared) | https://nzj7bzjxr8-create.github.io/dashwell-website/privacy.html |
@@ -58,7 +59,7 @@ git push                 # branch: master
 ```
 docs/
   index.html, about.html, contact.html, privacy.html, terms.html
-  compare/, sheetstand/, dashwell/
+  compare/, sheetstand/, formatstand/, dashwell/
   findash/, dashcsv/
   style.css, assets/
 ```
