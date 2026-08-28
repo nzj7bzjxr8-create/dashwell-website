@@ -1,40 +1,40 @@
 # dashwell-website
 
-Static **backup** of the Dashwell marketing site, published via **GitHub Pages**.
-Use this if [dashwellsolutions.com](https://dashwellsolutions.com) is down.
+The **live** Dashwell marketing site, published via **GitHub Pages** at:
 
-The live WordPress site remains the primary site. This repo is a static snapshot
-that works on GitHub Pages at:
+**https://dashwellsolutions.com/**
 
-**https://nzj7bzjxr8-create.github.io/dashwell-website/**
+This repo replaced the previous WordPress site. Pages is served from the `docs/`
+folder on the **`master`** branch, with `docs/CNAME` setting the custom domain.
+There is **no build step**. Internal links are relative, and with the custom domain
+the site is served from the domain root, so `docs/sheetstand/index.html` is
+`https://dashwellsolutions.com/sheetstand/`.
 
-Pages is served from the `docs/` folder on the **`master`** branch. There is **no
-build step** and **no CNAME** — the backup must keep working on `github.io` even
-when the custom domain is unavailable. Internal links are relative so they work
-under the `/dashwell-website/` base path.
+`https://nzj7bzjxr8-create.github.io/dashwell-website/` still resolves, but GitHub
+now 301-redirects it to the custom domain — it is no longer an independent fallback.
 
-| Page | Backup URL |
+| Page | URL |
 |------|------------|
-| Hub / Home | https://nzj7bzjxr8-create.github.io/dashwell-website/ |
-| About | https://nzj7bzjxr8-create.github.io/dashwell-website/about.html |
-| Contact | https://nzj7bzjxr8-create.github.io/dashwell-website/contact.html |
-| Compare | https://nzj7bzjxr8-create.github.io/dashwell-website/compare/ |
-| SheetStand | https://nzj7bzjxr8-create.github.io/dashwell-website/sheetstand/ |
-| FormatStand | https://nzj7bzjxr8-create.github.io/dashwell-website/formatstand/ |
-| Dashwell | https://nzj7bzjxr8-create.github.io/dashwell-website/dashwell/ |
-| ↳ User Guide | https://nzj7bzjxr8-create.github.io/dashwell-website/dashwell/guide.html |
-| Privacy (shared) | https://nzj7bzjxr8-create.github.io/dashwell-website/privacy.html |
-| Terms (shared) | https://nzj7bzjxr8-create.github.io/dashwell-website/terms.html |
-| Dashwell Portfolio Creator | https://nzj7bzjxr8-create.github.io/dashwell-website/findash/ |
-| ↳ Privacy Policy | https://nzj7bzjxr8-create.github.io/dashwell-website/findash/privacy.html |
-| ↳ Support | https://nzj7bzjxr8-create.github.io/dashwell-website/findash/support.html |
-| ↳ Terms of Use | https://nzj7bzjxr8-create.github.io/dashwell-website/findash/terms.html |
-| ↳ User Guide | https://nzj7bzjxr8-create.github.io/dashwell-website/findash/guide.html |
-| DashCSV | https://nzj7bzjxr8-create.github.io/dashwell-website/dashcsv/ |
-| ↳ Privacy Policy | https://nzj7bzjxr8-create.github.io/dashwell-website/dashcsv/privacy.html |
-| ↳ Support | https://nzj7bzjxr8-create.github.io/dashwell-website/dashcsv/support.html |
-| ↳ Terms of Use | https://nzj7bzjxr8-create.github.io/dashwell-website/dashcsv/terms.html |
-| ↳ User Guide | https://nzj7bzjxr8-create.github.io/dashwell-website/dashcsv/guide.html |
+| Hub / Home | https://dashwellsolutions.com/ |
+| About | https://dashwellsolutions.com/about.html |
+| Contact | https://dashwellsolutions.com/contact.html |
+| Compare | https://dashwellsolutions.com/compare/ |
+| SheetStand | https://dashwellsolutions.com/sheetstand/ |
+| FormatStand | https://dashwellsolutions.com/formatstand/ |
+| Dashwell | https://dashwellsolutions.com/dashwell/ |
+| ↳ User Guide | https://dashwellsolutions.com/dashwell/guide.html |
+| Privacy (shared) | https://dashwellsolutions.com/privacy.html |
+| Terms (shared) | https://dashwellsolutions.com/terms.html |
+| Dashwell Portfolio Creator | https://dashwellsolutions.com/findash/ |
+| ↳ Privacy Policy | https://dashwellsolutions.com/findash/privacy.html |
+| ↳ Support | https://dashwellsolutions.com/findash/support.html |
+| ↳ Terms of Use | https://dashwellsolutions.com/findash/terms.html |
+| ↳ User Guide | https://dashwellsolutions.com/findash/guide.html |
+| DashCSV | https://dashwellsolutions.com/dashcsv/ |
+| ↳ Privacy Policy | https://dashwellsolutions.com/dashcsv/privacy.html |
+| ↳ Support | https://dashwellsolutions.com/dashcsv/support.html |
+| ↳ Terms of Use | https://dashwellsolutions.com/dashcsv/terms.html |
+| ↳ User Guide | https://dashwellsolutions.com/dashcsv/guide.html |
 
 > ⚠️ **App Store Connect note:** `findash/privacy.html`, `findash/support.html`,
 > `dashcsv/privacy.html`, and `dashcsv/support.html` may be referenced as the apps'
@@ -67,8 +67,15 @@ docs/
 ## GitHub Pages setup
 
 Repo **Settings → Pages → Build and deployment** → **Source: Deploy from a branch** →
-**Branch: `master` / `docs`**. Leave **Custom domain** empty so the backup stays on
-`github.io` if dashwellsolutions.com is down.
+**Branch: `master` / `docs`**, with **Custom domain** set to `dashwellsolutions.com`
+and **Enforce HTTPS** enabled. That setting is mirrored by `docs/CNAME` — keep the
+two in sync; deleting `docs/CNAME` drops the custom domain.
 
-Contact forms post to Formspree (independent of the WordPress host). Email links
-use `mailto:info@dashwellsolutions.com`.
+DNS lives at Northwest Registered Agent (`ns1/ns2.hosting.businessidentity.llc`).
+The apex has four A records pointing at GitHub Pages (`185.199.108-111.153`), plus
+AAAA records, and `www` is a CNAME to `nzj7bzjxr8-create.github.io.`. The **MX and
+SPF records in that zone carry `info@dashwellsolutions.com` and must not be touched**
+when changing where the website points.
+
+Contact forms post to Formspree (independent of any host). Email links use
+`mailto:info@dashwellsolutions.com`.

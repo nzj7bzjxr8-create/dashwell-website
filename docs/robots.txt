@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://nzj7bzjxr8-create.github.io/dashwell-website/sitemap.xml
+Sitemap: https://dashwellsolutions.com/sitemap.xml
