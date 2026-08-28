@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SheetStand — Sheet Music Library &amp; Performance Viewer</title>
-    <meta name="description" content="SheetStand is a local-first PDF sheet-music library and full-screen performance viewer for iPad, Mac, and iPhone. Available now on the App Store from Dashwell LLC.">
+    <title>SheetStand — Sheet Music Library &amp; Practice Stand</title>
+    <meta name="description" content="SheetStand is a local-first PDF sheet-music library and full-screen performance viewer for iPad, Mac, and iPhone. Version 2.0 adds a metronome, backing tracks, practice speed, and MIDI keyboard play-along.">
     <link rel="canonical" href="https://dashwellsolutions.com/sheetstand/">
-    <meta property="og:title" content="SheetStand — Sheet Music Library &amp; Performance Viewer">
-    <meta property="og:description" content="SheetStand is a local-first PDF sheet-music library and full-screen performance viewer for iPad, Mac, and iPhone. Available now on the App Store from Dashwell LLC.">
+    <meta property="og:title" content="SheetStand — Sheet Music Library &amp; Practice Stand">
+    <meta property="og:description" content="SheetStand is a local-first PDF sheet-music library and full-screen performance viewer for iPad, Mac, and iPhone. Version 2.0 adds a metronome, backing tracks, practice speed, and MIDI keyboard play-along.">
     <meta property="og:url" content="https://dashwellsolutions.com/sheetstand/">
     <meta property="og:image" content="https://dashwellsolutions.com/assets/dashwell-logo.png">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
@@ -29,49 +29,107 @@
     <section class="hero">
         <img class="app-icon" src="../assets/sheetstand-icon.png" alt="SheetStand app icon" width="120" height="120">
         <h1>SheetStand</h1>
-        <p class="tagline">Sheet music library &amp; performance viewer</p>
-        <p class="platform">iPad-first · Mac &amp; iPhone · Available now</p>
-        <p class="note">Scan your PDF sheet music, organize by title and composer, and play full-screen at the piano.</p>
+        <p class="tagline">Sheet music library &amp; practice stand</p>
+        <p class="platform">iPad-first · Mac &amp; iPhone · Version 2.0 on the App Store</p>
+        <p class="note">Copy your PDF sheet music in, organize by title and composer, and play full-screen at the piano — now with a metronome, backing tracks, and MIDI keyboard play-along.</p>
         <div class="btn-row">
             <a class="btn btn-primary" href="https://apps.apple.com/app/sheetstand-your-score-library/id6796785020">Download from App Store</a>
         </div>
     </section>
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Now available on the App Store</h2>
-            <p class="section-lead">SheetStand is available now on the App Store — a Dashwell LLC app for musicians who keep their library as PDFs, not another cloud subscription.</p>
+            <p class="section-kicker">New in 2.0</p>
+            <h2 class="section-title">The viewer is now a practice stand</h2>
+            <p class="section-lead">SheetStand 2.0 adds performance audio to the full-screen viewer. A compact transport sits above the page controls, so you can start a backing track, slow it down, and turn pages without opening a panel — and Hide gives the score the whole screen back.</p>
             <div class="features">
                 <div class="card">
-                    <h3>PDF library scan</h3>
-                    <p>Point SheetStand at a folder of sheet-music PDFs. It builds a searchable catalog on your device.</p>
+                    <h3>Metronome on the audio clock</h3>
+                    <p>Scheduled against the audio clock, so it stays steady with a backing track over a whole movement — not just a few bars. Time signature and count-in bars, with a dot per beat.</p>
                 </div>
                 <div class="card">
-                    <h3>Title, composer &amp; key</h3>
-                    <p>On-device extraction fills metadata so you can find the right piece fast — with a review step when heuristics need a hand.</p>
+                    <h3>Backing tracks</h3>
+                    <p>Attach a track to a piece or open one ad hoc. MP3, M4A, WAV, and AIFF all work, as do Standard MIDI files — rendered offline with the piano you select.</p>
                 </div>
                 <div class="card">
-                    <h3>Full-screen performance view</h3>
-                    <p>iPad-first viewer with tap page turns, keep-awake, and pinch zoom — built for the music stand, not the couch.</p>
+                    <h3>Practice speed 0.5×–1.5×</h3>
+                    <p>Slow a passage down without the chipmunk effect. Keep pitch is the default; tape-style pitch shift is there when you want it.</p>
                 </div>
                 <div class="card">
-                    <h3>Local-first</h3>
-                    <p>Your scores stay on your device. Optional iCloud Drive sync is planned for a later release — off by default when it ships.</p>
+                    <h3>MIDI keyboard play-along</h3>
+                    <p>Play a USB-C or class-compliant keyboard over CoreMIDI and hear it in the app. Bluetooth MIDI pairs inside the app on iPad and iPhone, and in Audio MIDI Setup on Mac.</p>
                 </div>
                 <div class="card">
-                    <h3>Mac, iPad &amp; iPhone</h3>
-                    <p>One native SwiftUI codebase. iPad is the primary stage; Mac and iPhone share the same library tools.</p>
+                    <h3>Pedal handled properly</h3>
+                    <p>Sustain pedal including half-damper, plus all-notes-off so nothing hangs when you stop.</p>
                 </div>
                 <div class="card">
-                    <h3>From Dashwell LLC</h3>
-                    <p>Built by the same team as Dashwell’s privacy-first money apps — a separate product for musicians, not a finance feature.</p>
+                    <h3>Bring your own piano</h3>
+                    <p>A grand piano is bundled (FreePats YDP Grand, CC BY 3.0). Import your own SF2 SoundFont and pick the bank if you would rather use it.</p>
                 </div>
             </div>
         </div>
     </section>
     <section class="section" style="background:var(--soft);">
         <div class="container">
+            <h2 class="section-title">Also in this release</h2>
+            <div class="features">
+                <div class="card">
+                    <h3>Per-piece practice settings</h3>
+                    <p>Tempo, meter, and count-in are saved with the score and follow it across your devices.</p>
+                </div>
+                <div class="card">
+                    <h3>Date added, everywhere</h3>
+                    <p>Library and Home show when a score arrived, and sort by Date Added with the newest first. Notes now preview in the Library list.</p>
+                </div>
+                <div class="card">
+                    <h3>Sharper reading</h3>
+                    <p>Better extraction from engraved lead sheets, “By”-prefixed titles, and Playground stamps.</p>
+                </div>
+                <div class="card">
+                    <h3>Mac refinements</h3>
+                    <p>Shift-click to select a range, ⌘1–⌘4 to switch modes, a proper Help menu, and Export PDF for the User’s Guide. Spacebar starts and stops the backing track.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">The library underneath</h2>
+            <p class="section-lead">Everything 1.0 did, still the point of the app — a searchable catalog of the PDFs you already own, not another cloud subscription.</p>
+            <div class="features">
+                <div class="card">
+                    <h3>Copy your PDFs in</h3>
+                    <p>Add Folder copies sheet-music PDFs into SheetStand’s own library and builds a searchable catalog. Your originals stay exactly where they are.</p>
+                </div>
+                <div class="card">
+                    <h3>Title, composer &amp; key</h3>
+                    <p>On-device extraction works cheapest-first — PDF metadata, then text, then OCR, then heuristics — and every field carries a source and confidence badge.</p>
+                </div>
+                <div class="card">
+                    <h3>Needs Review before rename</h3>
+                    <p>Nothing is renamed silently. Only confirmed pieces can be renamed, with a dry-run preview first and a variant suffix instead of overwriting on a collision.</p>
+                </div>
+                <div class="card">
+                    <h3>Full-screen performance view</h3>
+                    <p>iPad-first viewer with tap page turns, keep-awake, and pinch zoom — built for the music stand, not the couch.</p>
+                </div>
+                <div class="card">
+                    <h3>Your iCloud Drive, not our server</h3>
+                    <p>With iCloud on, your library lives in SheetStand’s own iCloud Drive folder, and two devices on the same Apple ID pick up confirmed metadata once it syncs. With iCloud off, everything stays on the device. There is no SheetStand account either way.</p>
+                </div>
+                <div class="card">
+                    <h3>Mac, iPad &amp; iPhone</h3>
+                    <p>One native SwiftUI codebase. iPad is the primary stage; Mac and iPhone share the same library tools.</p>
+                </div>
+            </div>
+            <p class="section-note">Requires iPadOS or iOS 17.0 and later, or macOS 15.6 and later. One-time App Store purchase — no subscription, no analytics SDK, no account.</p>
+        </div>
+    </section>
+    <section class="section" style="background:var(--soft);">
+        <div class="container">
             <h2 class="section-title">Stay in touch</h2>
-            <p class="section-lead">Questions about SheetStand? <a href="../contact.html">Contact us</a> or email <a href="mailto:info@dashwellsolutions.com">info@dashwellsolutions.com</a>. Next up: SheetStand 2.0.0, with performance features for practicing at the piano — no promises on timing yet.</p>
+            <p class="section-lead">Questions about SheetStand? <a href="../contact.html">Contact us</a> or email <a href="mailto:info@dashwellsolutions.com">info@dashwellsolutions.com</a>.</p>
+            <p class="legal-note"><em>SheetStand organizes PDF copies you already have. It does not sell sheet music, grant performance or recording rights, or replace the printed edition — always verify titles and credits against the score.</em></p>
             <div class="legal-cta">
                 <a class="btn btn-outline" href="../formatstand/">FormatStand</a>
                 <a class="btn btn-outline" href="../index.html">Money apps</a>
