@@ -62,7 +62,21 @@ docs/
   compare/, sheetstand/, formatstand/, dashwell/
   findash/, dashcsv/
   style.css, assets/
+    apps.js        # the app lineup — see below
 ```
+
+### Adding a new app
+
+`docs/assets/apps.js` is the one list of app names shared across pages: the contact form's
+"Which app?" picker is built from it, so a new app needs one line there and nothing else on
+`contact.html`. The form ships as a plain text field and is upgraded to the picker by that
+script, so it still works if the script fails to load.
+
+`privacy.html` and `terms.html` are written to cover **every** app Dashwell LLC publishes, by
+family (finance apps / music apps) rather than by name, so a new app is covered the day it
+ships. Names appear only as "at the date above" examples — refresh them when convenient, not as
+a release blocker. A new app in an existing family needs no edit to either page; a genuinely new
+*kind* of app needs a new family bullet in both.
 
 ## GitHub Pages setup
 

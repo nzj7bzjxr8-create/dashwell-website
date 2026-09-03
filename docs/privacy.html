@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — Dashwell, Dashwell Portfolio Creator &amp; DashCSV</title>
-    <meta name="description" content="One privacy policy for every Dashwell LLC app. Local-first: your portfolio, banking, and Apple Wallet data stay on your device. No servers, no tracking, no ads.">
+    <title>Privacy Policy — Dashwell LLC Apps</title>
+    <meta name="description" content="One privacy policy for every Dashwell LLC app. Local-first: your data stays on your device. No accounts, no servers of ours, no tracking, no ads.">
     <link rel="canonical" href="https://dashwellsolutions.com/privacy.html">
-    <meta property="og:title" content="Privacy Policy — Dashwell, Dashwell Portfolio Creator &amp; DashCSV">
-    <meta property="og:description" content="One privacy policy for every Dashwell LLC app. Local-first: your portfolio, banking, and Apple Wallet data stay on your device. No servers, no tracking, no ads.">
+    <meta property="og:title" content="Privacy Policy — Dashwell LLC Apps">
+    <meta property="og:description" content="One privacy policy for every Dashwell LLC app. Local-first: your data stays on your device. No accounts, no servers of ours, no tracking, no ads.">
     <meta property="og:url" content="https://dashwellsolutions.com/privacy.html">
     <meta property="og:image" content="https://dashwellsolutions.com/assets/dashwell-logo.png">
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -29,7 +29,7 @@
     <main class="container content">
         <p><a href="index.html">← Back to Dashwell Solutions</a></p>
 <h1>Privacy Policy</h1>
-        <p><strong>Last Updated:</strong> July 2026</p>
+        <p><strong>Last Updated:</strong> September 2026</p>
 
         <section>
             <h2>Data Controller</h2>
@@ -44,22 +44,28 @@
 
         <section>
             <h2>Scope</h2>
-            <p>This is the single Privacy Policy for every app Dashwell LLC publishes: <strong>Dashwell</strong> (our universal Mac/iPad/iPhone app), <strong>Dashwell Portfolio Creator</strong> (formerly FinDash, Mac/iPad), and <strong>DashCSV</strong> (Mac). All three share the same local-first architecture and data practices described below — the differences are which platforms and modes each app includes (only Dashwell has Banking/Transaction mode and iPhone/Apple Wallet support). Wherever this page says "the App," it applies equally to whichever of these apps you're using.</p>
+            <p>This is the single Privacy Policy for <strong>every app Dashwell LLC publishes</strong>, including any released after the date above. The current lineup is on our <a href="index.html">home page</a>. Wherever this page says "the App," it applies to whichever of our apps you are using.</p>
+            <p>Every app we publish shares the same foundation: local-first storage, no account to create, no analytics SDK, no advertising, and no servers of ours holding your data. A few sections below are specific to one family of apps and say so:</p>
+            <ul>
+                <li><strong>Finance apps</strong> — portfolio, custom-data, and transaction dashboards for Mac, iPad, and iPhone (at the date above: Dashwell, Dashwell Portfolio Creator, and DashCSV). The sections on market-data APIs, Apple FinanceKit, and the local portfolio database describe these apps. Only Dashwell has Banking/Transaction mode and iPhone/Apple Wallet support.</li>
+                <li><strong>Music apps</strong> — tools that work on files you already own, such as sheet music and audio (at the date above: SheetStand and FormatStand). They read only the files you open, hold no financial data, and make no market-data or FinanceKit requests of any kind.</li>
+            </ul>
         </section>
 
         <section>
             <h2>Overview</h2>
-            <p>Dashwell ("we", "us", "our", or "the App") is a portfolio, custom-data, and transaction dashboard application. This Privacy Policy explains how we handle information when you use the App.</p>
-            <p><strong>Core Principle:</strong> The App is local-first. Your financial data stays on your device and is not transmitted to our servers.</p>
+            <p>Dashwell LLC ("we", "us", "our") publishes the apps described in Scope above — portfolio and transaction dashboards, and tools for the sheet music and audio you already own. This Privacy Policy explains how we handle information when you use any of them ("the App").</p>
+            <p><strong>Core Principle:</strong> The App is local-first. Your data — financial records, documents, and media files alike — stays on your device and is not transmitted to our servers.</p>
         </section>
 
         <section>
             <h2>1. Data Collection</h2>
             <p>The App collects minimal data:</p>
             <ul>
-                <li><strong>Data You Import:</strong> Portfolio positions, transactions, watchlist data, and custom-mode data that you import via CSV, Excel, or other supported files. This data is stored locally on your device only.</li>
+                <li><strong>Data You Import (finance apps):</strong> Portfolio positions, transactions, watchlist data, and custom-mode data that you import via CSV, Excel, or other supported files. This data is stored locally on your device only.</li>
                 <li><strong>Transaction Mode Data (Dashwell only):</strong> Spending, budget, and category data you import from bank or card statement exports (CSV), or — only if you explicitly enable it — transaction and balance data for Apple Card, Apple Cash, and Savings with Apple via Apple's FinanceKit framework. See "Financial Data via Apple FinanceKit" below.</li>
                 <li><strong>Market Data:</strong> If you configure optional API keys (Alpha Vantage, Tiingo, Massive, FMP), market quotes are fetched from those services. See their privacy policies for details.</li>
+                <li><strong>Files You Open (music apps):</strong> The documents and media you add or point the app at — sheet music PDFs, audio files, and their embedded tags. They are read from the locations you choose and stay there. Where an app writes a converted or exported copy, it writes only where you tell it to and does not overwrite your originals. Nothing is uploaded anywhere.</li>
                 <li><strong>Settings & Preferences:</strong> Your dashboard layout, widget configurations, and preferences are stored locally on your device.</li>
             </ul>
             <p><strong>What We Do NOT Collect:</strong></p>
@@ -85,13 +91,14 @@
 
         <section>
             <h2>3. Data Storage</h2>
-            <p><strong>Local Storage:</strong> All financial data is stored in a local SQLite database on your device:</p>
+            <p><strong>Local Storage (finance apps):</strong> All financial data is stored in a local SQLite database on your device:</p>
             <ul>
                 <li><strong>Dashwell (macOS):</strong> `~/Library/Application Support/Dashwell/dashwell.db`</li>
                 <li><strong>Dashwell Portfolio Creator (macOS):</strong> `~/Library/Application Support/Dashwell Portfolio Creator/findash.db`</li>
                 <li><strong>DashCSV (macOS):</strong> `~/Library/Application Support/DashCSV/dashcsv.db`</li>
                 <li><strong>iPadOS / iPhone:</strong> App Documents directory (sandboxed)</li>
             </ul>
+            <p><strong>Local Storage (music apps):</strong> Your files stay where you keep them. These apps store only what they need to reopen your work — a sandboxed library and your preferences, plus the security-scoped bookmarks that let an app return to a folder you chose. Where an app offers iCloud (SheetStand does), your library lives in that app's own iCloud Drive folder under your Apple ID, it is off unless you turn it on, and there is still no account of ours involved.</p>
             <p><strong>Encryption:</strong> Optional files can be password-protected. Passwords are stored in macOS Keychain / iOS Secure Enclave.</p>
             <p><strong>API Keys:</strong> Optional market data API keys are stored in macOS/iOS Keychain (not transmitted to us).</p>
             <p><strong>iCloud Sync (Optional):</strong> You may optionally enable iCloud sync to synchronize your database across your devices. This is user-controlled and disabled by default. Encrypted data remains encrypted when synced to iCloud.</p>
@@ -105,6 +112,7 @@
                 <li><strong>Apple iCloud:</strong> If you enable optional iCloud sync, your encrypted database is stored on Apple's servers. You can disable iCloud sync at any time.</li>
                 <li><strong>Apple FinanceKit:</strong> If you enable it, Dashwell reads data from Apple's FinanceKit API under Apple's own privacy terms; we do not send this data onward to us or anyone else.</li>
                 <li><strong>CSV/Statement Imports:</strong> Broker and bank statement data is imported by you and remains on your device.</li>
+                <li><strong>Music apps:</strong> None of the above applies to them. They contact no third party — FormatStand, for instance, has no network access at all — and SheetStand talks only to your own iCloud Drive, and only if you enable it.</li>
             </ul>
         </section>
 

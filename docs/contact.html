@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Dashwell Solutions</title>
-    <meta name="description" content="Contact Dashwell LLC for support, privacy questions, or business inquiries about Dashwell Portfolio Creator and DashCSV.">
+    <meta name="description" content="Contact Dashwell LLC for support, privacy questions, or business inquiries about Dashwell, Dashwell Portfolio Creator, DashCSV, SheetStand, and FormatStand.">
     <link rel="canonical" href="https://dashwellsolutions.com/contact.html">
     <meta property="og:title" content="Contact Dashwell Solutions">
-    <meta property="og:description" content="Contact Dashwell LLC for support, privacy questions, or business inquiries about Dashwell Portfolio Creator and DashCSV.">
+    <meta property="og:description" content="Contact Dashwell LLC for support, privacy questions, or business inquiries about Dashwell, Dashwell Portfolio Creator, DashCSV, SheetStand, and FormatStand.">
     <meta property="og:url" content="https://dashwellsolutions.com/contact.html">
     <meta property="og:image" content="https://dashwellsolutions.com/assets/dashwell-logo.png">
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -65,7 +65,9 @@
                 <h2>Contact Info</h2>
                 <p><strong>Email:</strong><br><a href="mailto:info@dashwellsolutions.com">info@dashwellsolutions.com</a></p>
                 <h3>Our Apps</h3>
-                <p>Browse the current lineup on the <a href="index.html">home page</a>.</p>
+                <p>We support every app Dashwell LLC publishes. Browse the current lineup on the
+                   <a href="index.html">home page</a>, or by section: <a href="compare/">Money</a>
+                   and <a href="music/">Music</a>.</p>
             </section>
         </div>
     </main>
@@ -76,5 +78,30 @@
             <p class="footer-links"><a href="index.html">Home</a> · <a href="compare/">Compare</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
         </div>
     </footer>
+    <script src="assets/apps.js"></script>
+    <script>
+    // The "Which app?" field ships as a free-text input so the form works with or without
+    // JavaScript. When the lineup loads, swap in a picker built from it — adding an app is then
+    // one line in assets/apps.js rather than an edit to this page.
+    (function () {
+        var input = document.getElementById("app");
+        var apps = window.DASHWELL_APPS;
+        if (!input || !Array.isArray(apps) || !apps.length) return;
+
+        var select = document.createElement("select");
+        select.id = input.id;
+        select.name = input.name;
+        select.required = input.required;
+
+        var placeholder = new Option("Choose an app…", "");
+        placeholder.disabled = true;
+        placeholder.selected = true;
+        select.add(placeholder);
+        apps.forEach(function (name) { select.add(new Option(name, name)); });
+        select.add(new Option("Something else", "Something else"));
+
+        input.replaceWith(select);
+    })();
+    </script>
 </body>
 </html>
