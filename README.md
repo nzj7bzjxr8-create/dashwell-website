@@ -20,8 +20,11 @@ now 301-redirects it to the custom domain — it is no longer an independent fal
 | Contact | https://dashwellsolutions.com/contact.html |
 | Compare | https://dashwellsolutions.com/compare/ |
 | SheetStand | https://dashwellsolutions.com/sheetstand/ |
+| ↳ Support | https://dashwellsolutions.com/sheetstand/support.html |
 | FormatStand | https://dashwellsolutions.com/formatstand/ |
+| ↳ Support | https://dashwellsolutions.com/formatstand/support.html |
 | Dashwell | https://dashwellsolutions.com/dashwell/ |
+| ↳ Support | https://dashwellsolutions.com/dashwell/support.html |
 | ↳ User Guide | https://dashwellsolutions.com/dashwell/guide.html |
 | Privacy (shared) | https://dashwellsolutions.com/privacy.html |
 | Terms (shared) | https://dashwellsolutions.com/terms.html |
@@ -41,6 +44,14 @@ now 301-redirects it to the custom domain — it is no longer an independent fal
 > `dashcsv/privacy.html`, and `dashcsv/support.html` may be referenced as the apps'
 > Privacy/Support URLs. **Do not rename or delete them** — keep all four live and
 > returning HTTP 200.
+>
+> Every app now has its own support page — `dashwell/support.html`,
+> `sheetstand/support.html` and `formatstand/support.html` were added alongside the two
+> above. Once a URL is set as an app's Support URL in App Store Connect, treat it the same
+> way: never rename or delete it. Support URL is editable in App Store Connect at any time
+> without a new build, on the version page under General Information; if you do change one,
+> leave the old page live until you are sure nothing points at it (GitHub Pages has no
+> server-side redirects).
 
 ## Edit and publish (no build step)
 
