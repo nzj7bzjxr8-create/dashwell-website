@@ -35,6 +35,7 @@ now 301-redirects it to the custom domain — it is no longer an independent fal
 | ↳ Support | https://dashwellsolutions.com/dashcsv/support.html |
 | ↳ Terms of Use | https://dashwellsolutions.com/dashcsv/terms.html |
 | ↳ User Guide | https://dashwellsolutions.com/dashcsv/guide.html |
+| New layout preview (in development) | https://dashwellsolutions.com/preview/ |
 
 > ⚠️ **App Store Connect note:** `findash/privacy.html`, `findash/support.html`,
 > `dashcsv/privacy.html`, and `dashcsv/support.html` may be referenced as the apps'
@@ -63,6 +64,10 @@ docs/
   findash/, dashcsv/
   style.css, assets/
     apps.js        # the app lineup — see below
+  preview/         # alternative home page layout, in development — see below
+    index.html, preview.css, preview.js
+    apps-data.js   # the app catalog that drives it
+    shots/         # screenshots for its detail popups
 ```
 
 ### Adding a new app
@@ -93,3 +98,39 @@ when changing where the website points.
 
 Contact forms post to Formspree (independent of any host). Email links use
 `mailto:info@dashwellsolutions.com`.
+
+## New layout preview (in development)
+
+`https://dashwellsolutions.com/preview/` is a **second, experimental home page** running
+alongside the current one so people can compare the two and say which they prefer. It shows
+every app in a single tile grid with filter chips, and opens the details in a popup instead of
+navigating to a separate page. It shows **no prices**, by design.
+
+It is reachable from the "Preview" item in the header nav, a "New layout preview" link in every
+footer, and a notice strip on the home page. Nothing else about the current site changed.
+
+It is self-contained in `docs/preview/`:
+
+- It loads `../style.css` first and then `preview.css`, so it inherits the site's existing
+  colours, header, footer, and buttons. **Do not move its rules into `docs/style.css`** — that
+  file is a copy of `Dashwell/web-shared/github-pages-style.css` and gets overwritten.
+- It is `noindex` and deliberately **absent from `sitemap.xml`** while it is an experiment.
+
+### Adding an app to the preview layout
+
+Append one object to `docs/preview/apps-data.js`. The tile, the filter chips, and the detail
+popup all follow automatically — no other file to edit. The field reference is in the comment at
+the top of that file.
+
+### Adding screenshots
+
+Drop images in `docs/preview/shots/<slug>/` and list them in that app's `shots` array. An app
+with no screenshots simply renders no screenshot rail — no placeholder, no gap — so they can be
+added one app at a time. Dashwell Portfolio Creator currently reuses the existing images in
+`docs/findash/assets/`. See `docs/preview/shots/README.md`.
+
+### Retiring the experiment
+
+Once a layout wins: delete `docs/preview/`, then remove the `Preview` nav item and the
+`New layout preview` footer link from every page under `docs/`, and the notice strip from
+`docs/index.html`. If the new layout is the winner instead, promote it and drop the `noindex`.

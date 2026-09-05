@@ -1,0 +1,245 @@
+/* ============================================================================
+   Dashwell — /preview/ layout experiment
+   Loaded AFTER ../style.css and only adds what the base sheet lacks:
+   the tile grid, the filter chips, and the app detail dialog.
+
+   Do NOT move these rules into ../style.css — that file is a copy of
+   Dashwell/web-shared/github-pages-style.css and gets overwritten.
+   ========================================================================== */
+
+/* ---------- Under-development banner ---------- */
+.preview-banner {
+  background: #fff8e1;
+  border-bottom: 1px solid #f0e0a8;
+  color: #6b5300;
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 15px;
+}
+.preview-banner strong { font-weight: 600; }
+.preview-banner a { color: #6b5300; text-decoration: underline; }
+
+/* ---------- Filter chips ---------- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.filter-chip {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid #d2d2d7;
+  border-radius: 999px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.filter-chip:hover { background: var(--soft); }
+.filter-chip.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.filter-chip:focus-visible,
+.app-tile:focus-visible,
+.modal-close:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+/* ---------- Tile grid ---------- */
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+.app-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font: inherit;
+  text-align: left;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  cursor: pointer;
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.app-tile:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+.tile-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.tile-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 13px;
+  flex: 0 0 auto;
+  display: block;
+}
+.tile-title { font-size: 18px; line-height: 1.25; margin: 0 0 8px; }
+.tile-summary { color: var(--muted); font-size: 15px; margin: 0; flex: 1 1 auto; }
+.tile-foot {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 4px;
+}
+.tile-details { color: var(--link); font-size: 15px; font-weight: 500; }
+.app-tile:hover .tile-details { text-decoration: underline; }
+
+.grid-empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 40px 0;
+}
+
+/* ---------- Chips (shared by tile + dialog) ---------- */
+.chip-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  background: var(--soft);
+  border-radius: 999px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+.chip-meta { background: #eef4fb; color: #3a5c80; }
+
+/* ---------- App detail dialog ---------- */
+#app-modal {
+  width: min(760px, 92vw);
+  /* The UA sheet caps a dialog at calc(100% - 6px - 2em); drop that so the
+     widths set here (and full-bleed on phones) actually take effect. */
+  max-width: none;
+  max-height: 88vh;
+  /* The site's global `* { margin: 0 }` reset kills the auto margins a
+     <dialog> centres itself with, so restore them explicitly. */
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.3);
+  overflow: hidden;
+  color: var(--ink);
+  background: #fff;
+}
+#app-modal::backdrop { background: rgba(0,0,0,0.45); }
+.modal-inner { display: flex; flex-direction: column; max-height: 88vh; }
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+  line-height: 1;
+  color: var(--muted);
+  background: var(--soft);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+}
+.modal-close:hover { background: #e8e8ed; color: var(--ink); }
+
+.modal-head {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 28px 56px 20px 28px;
+}
+.modal-icon { width: 76px; height: 76px; border-radius: 18px; flex: 0 0 auto; display: block; }
+.modal-title { font-size: 26px; line-height: 1.15; letter-spacing: -0.01em; margin: 0; }
+.modal-tagline { color: var(--muted); font-size: 15px; margin: 4px 0 10px; }
+
+/* Screenshot rail — horizontal scroll with snap */
+.modal-shots {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 28px 20px;
+}
+/* Every shot gets the same height and an auto width, so portrait and
+   landscape screenshots sit in one tidy rail instead of the tallest image
+   dictating the height and leaving dead space beside the rest. */
+.modal-shot { flex: 0 0 auto; scroll-snap-align: start; margin: 0; }
+.modal-shot img {
+  display: block;
+  height: 220px;
+  width: auto;
+  max-width: none;   /* overrides the base sheet's img { max-width: 100% } */
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--soft);
+}
+.modal-shot figcaption {
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+  margin-top: 6px;
+}
+
+.modal-meta { flex: 0 0 auto; display: flex; flex-wrap: wrap; gap: 8px; padding: 0 28px 18px; }
+
+/* Scrollable body, mirroring the reference layout */
+.modal-body {
+  overflow-y: auto;
+  padding: 0 28px 24px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.modal-body p { color: var(--muted); margin-bottom: 12px; }
+.modal-body h4 { font-size: 15px; margin: 18px 0 8px; }
+.modal-body ul { margin: 0 0 4px 20px; }
+.modal-body li { color: var(--muted); margin-bottom: 5px; }
+
+.modal-actions {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 18px 28px;
+  border-top: 1px solid var(--border);
+  background: var(--soft);
+}
+.modal-actions .btn { padding: 11px 22px; font-size: 15px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .modal-head { padding: 24px 52px 16px 20px; }
+  .modal-shots, .modal-meta, .modal-body, .modal-actions { padding-left: 20px; padding-right: 20px; }
+  .modal-shot img { height: 190px; }
+}
+@media (max-width: 640px) {
+  #app-modal { width: 100%; max-height: 100vh; border-radius: 0; }
+  .modal-inner { max-height: 100vh; }
+  .modal-icon { width: 60px; height: 60px; border-radius: 14px; }
+  .modal-shot img { height: 160px; }
+  .modal-title { font-size: 22px; }
+  .modal-actions .btn { flex: 1 1 100%; }
+  .tile-grid { grid-template-columns: 1fr; }
+}
