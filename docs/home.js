@@ -162,7 +162,14 @@
         var img = el('img');
         img.src = shot.src;
         img.alt = shot.alt || (app.name + ' screenshot');
-        img.loading = 'lazy';
+        /* Deliberately NOT lazy. These <img>s are created and inserted into a
+           closed <dialog>, and browsers do not reliably start a lazy load for
+           content that was never laid out in the document flow — they stayed
+           at complete=false, on screen, with no request made. Only one app's
+           shots exist at a time and opening the popup is an explicit action,
+           so eager is both correct and cheap. The detail pages' rails are
+           static markup in normal flow and do keep loading="lazy". */
+        img.loading = 'eager';
 
         /* Portrait phone and tablet shots get more height than landscape ones,
            or they end up as unreadable slivers next to a Mac window. Intrinsic
