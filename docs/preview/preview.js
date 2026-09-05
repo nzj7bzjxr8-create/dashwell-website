@@ -37,11 +37,24 @@
     return node;
   }
 
-  function chipRow(labels) {
+  var FAMILY_LABELS = window.DASHWELL_FAMILY_LABELS || {};
+
+  /* Category badge(s) first, then the platform chips. The category is derived
+     from `families` so the badge and the Money/Music filter can never drift
+     apart, and it gets a `cat-<family>` class for its colour. */
+  function chipRow(app) {
     var row = el('div', 'chip-row');
-    (labels || []).forEach(function (label) {
+
+    (app.families || []).forEach(function (family) {
+      var label = FAMILY_LABELS[family] ||
+                  family.charAt(0).toUpperCase() + family.slice(1);
+      row.appendChild(el('span', 'chip chip-cat cat-' + family, label));
+    });
+
+    (app.chips || []).forEach(function (label) {
       row.appendChild(el('span', 'chip', label));
     });
+
     return row;
   }
 
@@ -64,7 +77,7 @@
     }
     var headText = el('div');
     headText.appendChild(el('h3', 'tile-title', app.name));
-    if (app.chips && app.chips.length) { headText.appendChild(chipRow(app.chips)); }
+    headText.appendChild(chipRow(app));
     head.appendChild(headText);
     tile.appendChild(head);
 
@@ -130,7 +143,7 @@
     title.id = 'app-modal-title';
     headText.appendChild(title);
     if (app.tagline) { headText.appendChild(el('p', 'modal-tagline', app.tagline)); }
-    if (app.chips && app.chips.length) { headText.appendChild(chipRow(app.chips)); }
+    headText.appendChild(chipRow(app));
     head.appendChild(headText);
     inner.appendChild(head);
 

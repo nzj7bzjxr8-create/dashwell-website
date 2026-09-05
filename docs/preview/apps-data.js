@@ -11,9 +11,13 @@
      icon        required  path to the app icon, relative to /preview/
      tagline     optional  one short line under the name in the popup
      summary     required  1-2 sentences shown on the tile
-     families    optional  ["money"] | ["music"]  -> Money / Music filter chips
+     families    optional  ["money"] | ["music"]. Drives BOTH the Money/Music
+                           filter and the coloured category badge that leads
+                           each tile - see DASHWELL_FAMILY_LABELS below.
      platforms   optional  any of "mac", "ipad", "iphone" -> platform filters
-     chips       optional  free-text labels shown on the tile and popup
+     chips       optional  platform labels shown after the category badge,
+                           e.g. ["Mac", "iPad"]. Do not repeat the category
+                           here - it is added automatically.
      description optional  array of paragraphs for the popup body
      highlights  optional  array of bullet strings for the popup body
      meta        optional  { version, since, ... } shown as small pills.
@@ -27,6 +31,14 @@
      page        optional  existing detail page -> "Full details" button
    ========================================================================== */
 
+/* Display label for each family, used by the category badge that leads every
+   tile and popup. Adding a family? Add its label here and a `.cat-<key>` rule
+   in preview.css to give it a colour - without one it falls back to grey. */
+window.DASHWELL_FAMILY_LABELS = {
+  money: "Finance",
+  music: "Music"
+};
+
 window.DASHWELL_CATALOG = [
   {
     slug: "findash",
@@ -36,7 +48,7 @@ window.DASHWELL_CATALOG = [
     summary: "Easy dashboard creator for complex Excel & CSV data. Build portfolio and custom dashboards from any spreadsheet — track tax lots, dividends, inventories, and more.",
     families: ["money"],
     platforms: ["mac", "ipad"],
-    chips: ["Mac", "iPad", "Finance"],
+    chips: ["Mac", "iPad"],
     description: [
       "Import broker CSVs into Portfolio mode, or build Custom dashboards from any table. Optional API keys add delayed quotes.",
       "Your data stays on your Mac unless you turn on iCloud sync. No account, no subscription, no proprietary format."
@@ -69,7 +81,7 @@ window.DASHWELL_CATALOG = [
     summary: "The established portfolio dashboard for Mac. Import broker CSVs, track tax lots, and monitor dividends and earnings under the DashCSV App Store brand.",
     families: ["money"],
     platforms: ["mac"],
-    chips: ["Mac", "Finance"],
+    chips: ["Mac"],
     description: [
       "DashCSV turns broker CSV exports into a portfolio dashboard on your Mac — no account to create and nothing uploaded.",
       "It shares its engine with Dashwell Portfolio Creator and remains the established App Store brand for Mac-only users."
@@ -96,7 +108,7 @@ window.DASHWELL_CATALOG = [
     summary: "Apple Pay and Wallet tracking on iPhone, plus portfolio, banking, and custom dashboards — all synced across your devices with iCloud.",
     families: ["money"],
     platforms: ["mac", "ipad", "iphone"],
-    chips: ["Mac", "iPad", "iPhone", "Finance"],
+    chips: ["Mac", "iPad", "iPhone"],
     description: [
       "Dashwell brings Apple Pay and Wallet transaction tracking to iPhone and syncs it with portfolio, banking, and custom dashboards across your devices.",
       "Local-first and private by default — iCloud sync is yours, not ours."
@@ -123,7 +135,7 @@ window.DASHWELL_CATALOG = [
     summary: "Local-first PDF sheet-music library and practice stand — organize your scores, then play along with a metronome, backing tracks, and a MIDI keyboard.",
     families: ["music"],
     platforms: ["ipad", "mac", "iphone"],
-    chips: ["iPad", "Mac", "iPhone", "Music"],
+    chips: ["iPad", "Mac", "iPhone"],
     description: [
       "Copy your PDF sheet music in, organize by title and composer, and play full-screen at the piano.",
       "Version 2.0 adds a metronome scheduled against the audio clock, backing tracks, adjustable practice speed, and MIDI keyboard play-along. Your scores live in your own iCloud Drive, not on our server."
@@ -150,7 +162,7 @@ window.DASHWELL_CATALOG = [
     summary: "Local-first batch audio converter for Mac. Drop folders of FLAC, MP3, and more — convert to AAC, ALAC, AIFF, or WAV while keeping tags and artwork.",
     families: ["music"],
     platforms: ["mac"],
-    chips: ["Mac", "Music"],
+    chips: ["Mac"],
     description: [
       "Drop a folder of music, convert to the format you want, and keep tags and artwork — no accounts, no uploads.",
       "Everything runs on your Mac, offline."

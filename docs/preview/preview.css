@@ -120,6 +120,21 @@
 }
 .chip-meta { background: #eef4fb; color: #3a5c80; }
 
+/* Category badge — leads the chip row and is deliberately louder than the
+   neutral platform chips next to it, so the app's family reads first.
+   A family with no cat-* rule of its own falls back to this solid ink pill. */
+.chip-cat {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--ink);
+  padding: 4px 10px;
+}
+.cat-money { background: #047857; }   /* finance green, darkened for contrast */
+.cat-music { background: #6d28d9; }
+
 /* ---------- App detail dialog ---------- */
 #app-modal {
   width: min(760px, 92vw);
