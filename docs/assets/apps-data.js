@@ -69,19 +69,19 @@ window.DASHWELL_CATALOG = [
     shots: [
       { src: "findash/assets/findash-port-dashboard-mac-full.png",
         alt: "Dashwell Portfolio Creator — Portfolio mode dashboard with allocation and performance widgets on macOS",
-        caption: "Portfolio dashboard", w: 2880, h: 1800 },
+        caption: "Portfolio dashboard", w: 1280, h: 800 },
       { src: "findash/assets/findash-port-options-mac-full.png",
         alt: "Dashwell Portfolio Creator — Portfolio mode options monitor on macOS",
-        caption: "Options monitor", w: 2880, h: 1800 },
+        caption: "Options monitor", w: 1280, h: 800 },
       { src: "findash/assets/findash-custom-dashboard-mac-full.png",
         alt: "Dashwell Portfolio Creator — Custom mode home inventory dashboard on macOS",
-        caption: "Custom dashboards", w: 2880, h: 1800 },
+        caption: "Custom dashboards", w: 1280, h: 800 },
       { src: "findash/assets/findash-custom-attachments-mac-full.png",
         alt: "Dashwell Portfolio Creator — Custom mode attachments and receipts on macOS",
-        caption: "Attachments & receipts", w: 2880, h: 1800 },
+        caption: "Attachments & receipts", w: 1280, h: 800 },
       { src: "findash/assets/findash-ipad-p1.png",
         alt: "Dashwell Portfolio Creator running on iPad",
-        caption: "On iPad", w: 1000, h: 1333 }
+        caption: "On iPad", w: 750, h: 1000 }
     ],
     appStore: "https://apps.apple.com/app/findash-portfolio-tracker/id6759726608",
     page: "findash/"
