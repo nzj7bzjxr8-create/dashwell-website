@@ -1,11 +1,33 @@
 /* ============================================================================
-   Dashwell — /preview/ layout experiment
-   Loaded AFTER ../style.css and only adds what the base sheet lacks:
-   the tile grid, the filter chips, and the app detail dialog.
+   Dashwell home page — the tile grid, filter chips, and app detail dialog.
+   Loaded AFTER style.css and only adds what the base sheet lacks.
 
-   Do NOT move these rules into ../style.css — that file is a copy of
+   Do NOT move these rules into style.css — that file is a copy of
    Dashwell/web-shared/github-pages-style.css and gets overwritten.
+
+   What this file depends on from style.css, and would break if re-synced:
+     - tokens --ink, --muted, --border, --soft, --link
+     - .container, .page-hero, .section*, .site-header/.site-footer furniture
+     - .btn / .btn-primary / .btn-outline, applied by home.js to the popup's
+       two CTAs — those are NOT greppable in the HTML
+   It also deliberately overrides three global resets; each is commented at
+   the point of use (`* { margin:0 }`, `img { max-width:100% }`, the `a` rules).
    ========================================================================== */
+
+/* ---------- Hero ---------- */
+.hero-logo {
+  display: block;
+  width: min(280px, 68vw);
+  height: auto;
+  margin: 0 auto;
+}
+.page-hero h1 { margin: 0; line-height: 0; }   /* the logo is the heading */
+.hero-intro {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 560px;
+  margin: 10px auto 0;
+}
 
 /* ---------- Under-development banner ---------- */
 .preview-banner {
@@ -20,6 +42,7 @@
 .preview-banner a { color: #6b5300; text-decoration: underline; }
 
 /* ---------- Filter chips ---------- */
+.filter-bar[hidden] { display: none; }   /* beats .filter-bar's display:flex */
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
@@ -66,6 +89,7 @@
   font: inherit;
   text-align: left;
   color: var(--ink);
+  text-decoration: none;   /* it is an <a> to the detail page, not a button */
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -74,6 +98,7 @@
   transition: box-shadow .15s ease, transform .15s ease;
 }
 .app-tile:hover {
+  text-decoration: none;
   box-shadow: 0 8px 30px rgba(0,0,0,0.12);
   transform: translateY(-2px);
 }

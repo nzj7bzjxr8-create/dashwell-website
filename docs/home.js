@@ -1,34 +1,50 @@
 /* ============================================================================
-   Dashwell — /preview/ layout experiment
-   Renders the app tile grid and the detail dialog from window.DASHWELL_CATALOG.
+   Dashwell home page — progressive enhancement for the app grid.
+
+   The tiles in index.html are real <a> links to the detail pages, so the page
+   is fully usable for crawlers and with JavaScript off. This file upgrades
+   them: it intercepts the click to open the detail <dialog> instead, and
+   builds the filter bar from each tile's own data-families / data-platforms.
+   Popup content comes from window.DASHWELL_CATALOG, matched on data-slug.
+
    No dependencies. All catalog text is injected with textContent, never HTML.
+   Depends on style.css for --ink/--muted/--border/--soft/--link and for the
+   .btn / .btn-primary / .btn-outline classes applied to the popup's two CTAs.
    ========================================================================== */
 (function () {
   'use strict';
 
-  var apps = window.DASHWELL_CATALOG || [];
+  var catalog = {};
+  (window.DASHWELL_CATALOG || []).forEach(function (a) { catalog[a.slug] = a; });
+
   var grid = document.getElementById('app-grid');
   var bar = document.getElementById('app-filters');
   var modal = document.getElementById('app-modal');
   if (!grid || !bar || !modal) { return; }
 
+  var tiles = [].slice.call(grid.querySelectorAll('.app-tile'));
+  if (!tiles.length) { return; }
+
+  function tokens(tile, attr) {
+    return (tile.getAttribute(attr) || '').split(/\s+/).filter(Boolean);
+  }
+
   /* Filter definitions. A chip only appears if some app actually matches it,
      so a new app with a new platform needs no change here beyond the label. */
   var FILTERS = [
     { id: 'all',    label: 'All apps', match: function () { return true; } },
-    { id: 'money',  label: 'Money',    match: function (a) { return has(a.families, 'money'); } },
-    { id: 'music',  label: 'Music',    match: function (a) { return has(a.families, 'music'); } },
-    { id: 'mac',    label: 'Mac',      match: function (a) { return has(a.platforms, 'mac'); } },
+    { id: 'money',  label: 'Money',    match: function (t) { return fam(t, 'money'); } },
+    { id: 'music',  label: 'Music',    match: function (t) { return fam(t, 'music'); } },
+    { id: 'mac',    label: 'Mac',      match: function (t) { return plat(t, 'mac'); } },
     { id: 'mobile', label: 'iPhone & iPad',
-      match: function (a) { return has(a.platforms, 'ipad') || has(a.platforms, 'iphone'); } }
+      match: function (t) { return plat(t, 'ipad') || plat(t, 'iphone'); } }
   ];
+
+  function fam(tile, v)  { return tokens(tile, 'data-families').indexOf(v) !== -1; }
+  function plat(tile, v) { return tokens(tile, 'data-platforms').indexOf(v) !== -1; }
 
   var active = 'all';
   var lastFocused = null;
-
-  function has(list, value) {
-    return Array.isArray(list) && list.indexOf(value) !== -1;
-  }
 
   function el(tag, className, text) {
     var node = document.createElement(tag);
@@ -58,56 +74,47 @@
     return row;
   }
 
-  /* ---------- Grid ---------- */
+  /* ---------- Grid: enhance what is already in the HTML ---------- */
 
-  function buildTile(app) {
-    var tile = el('button', 'app-tile');
-    tile.type = 'button';
-    tile.setAttribute('aria-haspopup', 'dialog');
-    tile.dataset.slug = app.slug;
-
-    var head = el('div', 'tile-head');
-    if (app.icon) {
-      var icon = el('img', 'tile-icon');
-      icon.src = app.icon;
-      icon.alt = '';
-      icon.width = 56;
-      icon.height = 56;
-      head.appendChild(icon);
-    }
-    var headText = el('div');
-    headText.appendChild(el('h3', 'tile-title', app.name));
-    headText.appendChild(chipRow(app));
-    head.appendChild(headText);
-    tile.appendChild(head);
-
-    if (app.summary) { tile.appendChild(el('p', 'tile-summary', app.summary)); }
-
-    var foot = el('div', 'tile-foot');
-    foot.appendChild(el('span', 'tile-details', 'Details →'));
-    tile.appendChild(foot);
-
-    tile.addEventListener('click', function () { openApp(app.slug, tile); });
-    return tile;
+  /* Each tile stays a working link to its detail page; we only intercept the
+     click. Modified clicks (new tab, download) and the keyboard's own link
+     activation are left alone where the user clearly wants to navigate. */
+  function enhanceTiles() {
+    tiles.forEach(function (tile) {
+      tile.setAttribute('aria-haspopup', 'dialog');
+      tile.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) { return; }
+        var slug = tile.getAttribute('data-slug');
+        if (!catalog[slug]) { return; }   // no popup content: let the link work
+        e.preventDefault();
+        openApp(slug, tile);
+      });
+    });
   }
 
   function renderGrid() {
     var filter = FILTERS.filter(function (f) { return f.id === active; })[0] || FILTERS[0];
-    var shown = apps.filter(filter.match);
+    var shown = 0;
 
-    grid.textContent = '';
-    if (!shown.length) {
+    tiles.forEach(function (tile) {
+      var match = filter.match(tile);
+      tile.hidden = !match;
+      if (match) { shown++; }
+    });
+
+    var empty = grid.querySelector('.grid-empty');
+    if (!shown && !empty) {
       grid.appendChild(el('p', 'grid-empty', 'No apps match this filter yet.'));
-      return;
+    } else if (shown && empty) {
+      empty.parentNode.removeChild(empty);
     }
-    shown.forEach(function (app) { grid.appendChild(buildTile(app)); });
   }
 
   function renderFilters() {
     bar.textContent = '';
     FILTERS.forEach(function (f) {
       /* Hide a chip nothing matches, so the bar stays honest as apps change. */
-      if (f.id !== 'all' && !apps.some(f.match)) { return; }
+      if (f.id !== 'all' && !tiles.some(f.match)) { return; }
 
       var chip = el('button', 'filter-chip', f.label);
       chip.type = 'button';
@@ -222,14 +229,14 @@
     var close = el('button', 'modal-close', '✕');
     close.type = 'button';
     close.setAttribute('aria-label', 'Close');
-    close.addEventListener('click', function () { modal.close(); });
+    close.addEventListener('click', function () { closeModal(); });
     inner.appendChild(close);
 
     modal.setAttribute('aria-labelledby', 'app-modal-title');
   }
 
   function openApp(slug, trigger) {
-    var app = apps.filter(function (a) { return a.slug === slug; })[0];
+    var app = catalog[slug];
     if (!app) { return; }
 
     lastFocused = trigger || document.activeElement;
@@ -253,14 +260,27 @@
     return m ? m[1] : null;
   }
 
+  /* Every close path goes through here. Cleanup does NOT hang off the native
+     'close' event alone: neither it nor 'cancel' is reliably delivered in
+     every embedding, and when they are missing the hash and focus are left
+     stranded. Idempotent, so the listener below can safely call it too. */
+  function closeModal() {
+    if (modal.open) { modal.close(); }
+    else { modal.removeAttribute('open'); }
+
+    if (slugFromHash()) {
+      history.pushState(null, '', window.location.pathname + window.location.search);
+    }
+    if (lastFocused && document.contains(lastFocused)) { lastFocused.focus(); }
+    lastFocused = null;
+  }
+
   /* Escape closes. A modal <dialog> normally does this itself via the native
-     close request, but that does not fire in every embedding, so handle the
-     key explicitly. Harmless when the native behaviour works — the dialog is
-     already closed by then and close() on a closed dialog is a no-op. */
+     close request, but that does not fire in every embedding. */
   modal.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' || e.key === 'Esc') {
       e.preventDefault();
-      modal.close();
+      closeModal();
     }
   });
 
@@ -271,14 +291,10 @@
     var r = modal.getBoundingClientRect();
     var outside = e.clientX < r.left || e.clientX > r.right ||
                   e.clientY < r.top || e.clientY > r.bottom;
-    if (outside) { modal.close(); }
+    if (outside) { closeModal(); }
   });
 
-  modal.addEventListener('close', function () {
-    if (slugFromHash()) { history.pushState(null, '', window.location.pathname); }
-    if (lastFocused && document.contains(lastFocused)) { lastFocused.focus(); }
-    lastFocused = null;
-  });
+  modal.addEventListener('close', function () { closeModal(); });
 
   /* Back/forward drives the modal, so Back closes it. */
   window.addEventListener('popstate', function () {
@@ -286,12 +302,14 @@
     if (slug) {
       openApp(slug, lastFocused);
     } else if (modal.open) {
-      modal.close();
+      closeModal();
     }
   });
 
+  enhanceTiles();
   renderFilters();
   renderGrid();
+  bar.hidden = false;   /* only now is the filter bar actually functional */
 
   var initial = slugFromHash();
   if (initial) { openApp(initial, null); }

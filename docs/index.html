@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashwell Solutions — Privacy-First Portfolio Dashboard Apps</title>
-    <meta name="description" content="Dashwell Portfolio Creator and DashCSV turn broker CSV exports into local portfolio dashboards for Mac — Dashwell Portfolio Creator is also available on iPad. No subscription, no cloud account. Your data stays on your device.">
+    <title>Dashwell Solutions — Privacy-First Apps for Mac, iPad &amp; iPhone</title>
+    <meta name="description" content="Focused, privacy-first apps from Dashwell LLC — portfolio and money tools, a sheet-music library, and a batch audio converter for Mac, iPad, and iPhone. No subscription, no cloud account. Your data stays on your device.">
     <link rel="canonical" href="https://dashwellsolutions.com/">
-    <meta property="og:title" content="Dashwell Solutions — Privacy-First Portfolio Dashboard Apps">
-    <meta property="og:description" content="Dashwell Portfolio Creator and DashCSV turn broker CSV exports into local portfolio dashboards for Mac — Dashwell Portfolio Creator is also available on iPad. No subscription, no cloud account. Your data stays on your device.">
+    <meta property="og:title" content="Dashwell Solutions — Privacy-First Apps for Mac, iPad &amp; iPhone">
+    <meta property="og:description" content="Focused, privacy-first apps from Dashwell LLC — portfolio and money tools, a sheet-music library, and a batch audio converter for Mac, iPad, and iPhone. No subscription, no cloud account. Your data stays on your device.">
     <meta property="og:url" content="https://dashwellsolutions.com/">
     <meta property="og:image" content="https://dashwellsolutions.com/assets/dashwell-logo.png">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
     <header class="site-header">
@@ -23,38 +24,105 @@
                 <li><a href="music/">Music</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="preview/">Preview</a></li>
             </ul></nav>
         </div>
     </header>
-    <img class="hero-banner" src="assets/dashwell-hero.png" alt="Dashwell — Business Intelligence &amp; Home Dashboard Solutions">
-    <p style="text-align:center;background:var(--soft);border-bottom:1px solid var(--border);padding:12px 20px;font-size:15px;color:var(--muted);margin:0;">🚧 We’re trialling a new site layout — <a href="preview/">take a look</a> and tell us which you prefer.</p>
-    <p class="home-intro">We build focused, privacy-first dashboard apps for business and home.</p>
 
-    <section class="section">
+    <div class="page-hero">
+        <h1><img class="hero-logo" src="assets/dashwell-logo.png" alt="Dashwell Solutions" width="1200" height="300"></h1>
+        <p class="tagline">Business Intelligence &amp; Home Solutions</p>
+        <p class="hero-intro">Focused, privacy-first apps for Mac, iPad, and iPhone — your data stays on your device.</p>
+    </div>
+
+    <section class="section" style="padding-top:32px;">
         <div class="container">
-            <h2 class="section-title">Our Products</h2>
-            <div class="product-tiles">
-                <a class="product-tile" href="findash/">
-                    <img class="product-tile-icon" src="assets/findash-icon.png" alt="Dashwell Portfolio Creator app icon" width="96" height="96">
-                    <h3>Dashwell Portfolio Creator</h3>
-                    <p class="platform-badge">Mac &amp; iPad · App Store</p>
-                    <p>Easy dashboard creator for complex Excel &amp; CSV data. Build portfolio and custom dashboards from any spreadsheet — track tax lots, dividends, inventories, and more.</p>
-                    <span class="btn btn-outline">Learn more</span>
+            <!-- Filter bar is built by home.js from each tile's data-families /
+                 data-platforms, and unhidden only once that succeeds. -->
+            <div class="filter-bar" id="app-filters" role="group" aria-label="Filter apps" hidden></div>
+
+            <!-- Tiles are real links to the detail pages, so the page works for
+                 crawlers and without JavaScript; home.js upgrades them to open
+                 the popup instead. Adding an app = one block here + one object
+                 in assets/apps-data.js, matched on data-slug. -->
+            <div class="tile-grid" id="app-grid">
+                <a class="app-tile" href="findash/" data-slug="findash" data-families="money" data-platforms="mac ipad">
+                    <div class="tile-head">
+                        <img class="tile-icon" src="assets/findash-icon.png" alt="" width="56" height="56">
+                        <div>
+                            <h3 class="tile-title">Dashwell Portfolio Creator</h3>
+                            <div class="chip-row">
+                                <span class="chip chip-cat cat-money">Finance</span>
+                                <span class="chip">Mac</span>
+                                <span class="chip">iPad</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tile-summary">Easy dashboard creator for complex Excel &amp; CSV data. Build portfolio and custom dashboards from any spreadsheet — track tax lots, dividends, inventories, and more.</p>
+                    <span class="tile-foot"><span class="tile-details">Details →</span></span>
                 </a>
-                <a class="product-tile" href="dashcsv/">
-                    <img class="product-tile-icon" src="assets/dashcsv-icon.png" alt="DashCSV app icon" width="96" height="96">
-                    <h3>DashCSV</h3>
-                    <p class="platform-badge">Mac · App Store</p>
-                    <p>The established portfolio dashboard for Mac. Import broker CSVs, track tax lots, and monitor dividends and earnings under the DashCSV App Store brand.</p>
-                    <span class="btn btn-outline">Learn more</span>
+
+                <a class="app-tile" href="dashcsv/" data-slug="dashcsv" data-families="money" data-platforms="mac">
+                    <div class="tile-head">
+                        <img class="tile-icon" src="assets/dashcsv-icon.png" alt="" width="56" height="56">
+                        <div>
+                            <h3 class="tile-title">DashCSV</h3>
+                            <div class="chip-row">
+                                <span class="chip chip-cat cat-money">Finance</span>
+                                <span class="chip">Mac</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tile-summary">The established portfolio dashboard for Mac. Import broker CSVs, track tax lots, and monitor dividends and earnings under the DashCSV App Store brand.</p>
+                    <span class="tile-foot"><span class="tile-details">Details →</span></span>
                 </a>
-                <a class="product-tile" href="dashwell/">
-                    <img class="product-tile-icon" src="assets/dashwell-icon.png" alt="Dashwell app icon" width="96" height="96">
-                    <h3>Dashwell: Your Money Assistant</h3>
-                    <p class="platform-badge">Mac, iPad &amp; iPhone · App Store</p>
-                    <p>Apple Pay and Wallet tracking on iPhone, plus portfolio, banking, and custom dashboards — all synced across your devices with iCloud.</p>
-                    <span class="btn btn-outline">Learn more</span>
+
+                <a class="app-tile" href="dashwell/" data-slug="dashwell" data-families="money" data-platforms="mac ipad iphone">
+                    <div class="tile-head">
+                        <img class="tile-icon" src="assets/dashwell-icon.png" alt="" width="56" height="56">
+                        <div>
+                            <h3 class="tile-title">Dashwell</h3>
+                            <div class="chip-row">
+                                <span class="chip chip-cat cat-money">Finance</span>
+                                <span class="chip">Mac</span>
+                                <span class="chip">iPad</span>
+                                <span class="chip">iPhone</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tile-summary">Apple Pay and Wallet tracking on iPhone, plus portfolio, banking, and custom dashboards — all synced across your devices with iCloud.</p>
+                    <span class="tile-foot"><span class="tile-details">Details →</span></span>
+                </a>
+
+                <a class="app-tile" href="sheetstand/" data-slug="sheetstand" data-families="music" data-platforms="ipad mac iphone">
+                    <div class="tile-head">
+                        <img class="tile-icon" src="assets/sheetstand-icon.png" alt="" width="56" height="56">
+                        <div>
+                            <h3 class="tile-title">SheetStand</h3>
+                            <div class="chip-row">
+                                <span class="chip chip-cat cat-music">Music</span>
+                                <span class="chip">iPad</span>
+                                <span class="chip">Mac</span>
+                                <span class="chip">iPhone</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tile-summary">Local-first PDF sheet-music library and practice stand — organize your scores, then play along with a metronome, backing tracks, and a MIDI keyboard.</p>
+                    <span class="tile-foot"><span class="tile-details">Details →</span></span>
+                </a>
+
+                <a class="app-tile" href="formatstand/" data-slug="formatstand" data-families="music" data-platforms="mac">
+                    <div class="tile-head">
+                        <img class="tile-icon" src="assets/formatstand-icon.png" alt="" width="56" height="56">
+                        <div>
+                            <h3 class="tile-title">FormatStand</h3>
+                            <div class="chip-row">
+                                <span class="chip chip-cat cat-music">Music</span>
+                                <span class="chip">Mac</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tile-summary">Local-first batch audio converter for Mac. Drop folders of FLAC, MP3, and more — convert to AAC, ALAC, AIFF, or WAV while keeping tags and artwork.</p>
+                    <span class="tile-foot"><span class="tile-details">Details →</span></span>
                 </a>
             </div>
         </div>
@@ -71,30 +139,6 @@
     </section>
 
     <section class="section">
-        <div class="container">
-            <h2 class="section-title">Also from Dashwell LLC</h2>
-            <p class="section-kicker">Music · On the App Store</p>
-            <p class="section-lead">A second product family — not a finance app.</p>
-            <div class="product-tiles">
-                <a class="product-tile" href="sheetstand/">
-                    <img class="product-tile-icon" src="assets/sheetstand-icon.png" alt="SheetStand app icon" width="96" height="96">
-                    <h3>SheetStand</h3>
-                    <p class="platform-badge">iPad, Mac &amp; iPhone · App Store</p>
-                    <p>Local-first PDF sheet-music library and practice stand — organize your scores, then play along with a metronome, backing tracks, and a MIDI keyboard.</p>
-                    <span class="btn btn-outline">Learn more</span>
-                </a>
-                <a class="product-tile" href="formatstand/">
-                    <img class="product-tile-icon" src="assets/formatstand-icon.png" alt="FormatStand app icon" width="96" height="96">
-                    <h3>FormatStand</h3>
-                    <p class="platform-badge">Mac · App Store</p>
-                    <p>Local-first batch audio converter for Mac. Drop folders of FLAC, MP3, and more — convert to AAC, ALAC, AIFF, or WAV while keeping tags and artwork.</p>
-                    <span class="btn btn-outline">Learn more</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="background:var(--soft);">
         <div class="container">
             <h2 class="section-title">Our Approach</h2>
             <div class="features">
@@ -114,12 +158,20 @@
             <p class="section-note">Questions? <a href="contact.html">Contact us</a> or email <a href="mailto:info@dashwellsolutions.com">info@dashwellsolutions.com</a></p>
         </div>
     </section>
+
+    <dialog id="app-modal" aria-label="App details">
+        <div class="modal-inner"></div>
+    </dialog>
+
     <footer class="site-footer">
         <div class="container">
             <p class="footer-legal">Dashwell Solutions is a trade name of Dashwell LLC, a Virginia limited liability company.</p>
             <p class="footer-copy">© 2026 Dashwell LLC · Published by <a href="index.html">Dashwell Solutions</a> · <a href="mailto:info@dashwellsolutions.com">info@dashwellsolutions.com</a></p>
-            <p class="footer-links"><a href="index.html">Home</a> · <a href="compare/">Compare Money Apps</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="findash/">Dashwell Portfolio Creator</a> · <a href="dashcsv/">DashCSV</a> · <a href="dashwell/">Dashwell</a> · <a href="sheetstand/">SheetStand</a> · <a href="formatstand/">FormatStand</a> · <a href="preview/">New layout preview</a></p>
+            <p class="footer-links"><a href="index.html">Home</a> · <a href="compare/">Compare Money Apps</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="findash/">Dashwell Portfolio Creator</a> · <a href="dashcsv/">DashCSV</a> · <a href="dashwell/">Dashwell</a> · <a href="sheetstand/">SheetStand</a> · <a href="formatstand/">FormatStand</a></p>
         </div>
     </footer>
+
+    <script src="assets/apps-data.js"></script>
+    <script src="home.js"></script>
 </body>
 </html>

@@ -38,7 +38,6 @@ now 301-redirects it to the custom domain — it is no longer an independent fal
 | ↳ Support | https://dashwellsolutions.com/dashcsv/support.html |
 | ↳ Terms of Use | https://dashwellsolutions.com/dashcsv/terms.html |
 | ↳ User Guide | https://dashwellsolutions.com/dashcsv/guide.html |
-| New layout preview (in development) | https://dashwellsolutions.com/preview/ |
 
 > ⚠️ **App Store Connect note:** `findash/privacy.html`, `findash/support.html`,
 > `dashcsv/privacy.html`, and `dashcsv/support.html` may be referenced as the apps'
@@ -73,20 +72,33 @@ docs/
   index.html, about.html, contact.html, privacy.html, terms.html
   compare/, sheetstand/, formatstand/, dashwell/
   findash/, dashcsv/
-  style.css, assets/
-    apps.js        # the app lineup — see below
-  preview/         # alternative home page layout, in development — see below
-    index.html, preview.css, preview.js
-    apps-data.js   # the app catalog that drives it
-    shots/         # screenshots for its detail popups
+  style.css        # shared base sheet (see the warning below)
+  home.css, home.js # home page grid + app detail popup
+  assets/
+    apps-data.js   # the app catalog — see "Adding a new app"
+    shots/<slug>/  # app screenshots
+  preview/         # redirect stub; the trialled layout is now the home page
 ```
 
 ### Adding a new app
 
-`docs/assets/apps.js` is the one list of app names shared across pages: the contact form's
-"Which app?" picker is built from it, so a new app needs one line there and nothing else on
-`contact.html`. The form ships as a plain text field and is upgraded to the picker by that
-script, so it still works if the script fails to load.
+Two edits, both in `docs/`:
+
+1. **`assets/apps-data.js`** — append one object. This drives the app's detail popup on the
+   home page and the contact form's "Which app?" picker. The field reference is in the comment
+   at the top of that file.
+2. **`index.html`** — add one `<a class="app-tile">` block. The tiles are deliberately real
+   HTML links rather than JavaScript-generated, so the home page works for search crawlers and
+   with JavaScript off; `home.js` upgrades them to open the popup. Match `data-slug` to the
+   catalog's `slug`, and set `data-families` / `data-platforms` — the filter chips are built
+   from those attributes, so a new platform needs no code change.
+
+The app's one-line summary therefore lives in both the tile and the catalog. Run
+`python3 tools/check-tile-copy.py` to confirm they still agree — it also checks `about.html`
+and `music/index.html`, which keep their own tiles and have drifted before.
+
+The contact form ships as a plain text field and is upgraded to the picker by that script, so
+it still works if the script fails to load.
 
 `privacy.html` and `terms.html` are written to cover **every** app Dashwell LLC publishes, by
 family (finance apps / music apps) rather than by name, so a new app is covered the day it
@@ -110,39 +122,40 @@ when changing where the website points.
 Contact forms post to Formspree (independent of any host). Email links use
 `mailto:info@dashwellsolutions.com`.
 
-## New layout preview (in development)
+## Home page
 
-`https://dashwellsolutions.com/preview/` is a **second, experimental home page** running
-alongside the current one so people can compare the two and say which they prefer. It shows
-every app in a single tile grid with filter chips, and opens the details in a popup instead of
-navigating to a separate page. It shows **no prices**, by design.
+The home page is a single tile grid of every app with filter chips, and opens each app's
+details in a popup rather than navigating away. It replaced the previous grouped-sections
+layout after side-by-side feedback; the per-app detail pages were kept, and the popup's
+"Full details" button goes to them. It shows **no prices**, by design.
 
-It is reachable from the "Preview" item in the header nav, a "New layout preview" link in every
-footer, and a notice strip on the home page. Nothing else about the current site changed.
-
-It is self-contained in `docs/preview/`:
-
-- It loads `../style.css` first and then `preview.css`, so it inherits the site's existing
-  colours, header, footer, and buttons. **Do not move its rules into `docs/style.css`** — that
-  file is a copy of `Dashwell/web-shared/github-pages-style.css` and gets overwritten.
-- It is `noindex` and deliberately **absent from `sitemap.xml`** while it is an experiment.
-
-### Adding an app to the preview layout
-
-Append one object to `docs/preview/apps-data.js`. The tile, the filter chips, and the detail
-popup all follow automatically — no other file to edit. The field reference is in the comment at
-the top of that file.
+- Tiles are **real `<a>` links** in `index.html`; `home.js` intercepts the click to open the
+  popup. With JavaScript off, a click just opens the detail page, and the filter bar stays
+  hidden. This is why the home page is crawlable — do not move tile rendering into JavaScript.
+- `home.css` loads **after** `style.css` and only adds what the base sheet lacks. **Do not move
+  its rules into `docs/style.css`** — that file is a copy of
+  `Dashwell/web-shared/github-pages-style.css` and gets overwritten. `home.css`'s header
+  comment lists exactly what it depends on from the base sheet, including the `.btn` classes
+  that only ever appear via JavaScript.
+- `docs/preview/` is a redirect stub to `/`, kept because that URL was shared with reviewers
+  while the layout was being trialled.
 
 ### Adding screenshots
 
-All five apps have App Store screenshots. Drop new images in `docs/preview/shots/<slug>/` and
+All five apps have App Store screenshots. Drop new images in `docs/assets/shots/<slug>/` and
 list them in that app's `shots` array, with `alt`, an optional `caption`, and the image's real
 `w`/`h` so the rail reserves space and does not jump. An app with no screenshots simply renders
 no rail — no placeholder, no gap. Dashwell Portfolio Creator reuses the existing images in
-`docs/findash/assets/`. See `docs/preview/shots/README.md`.
+`docs/findash/assets/`. See `docs/assets/shots/README.md`.
 
-### Retiring the experiment
+To show the same screenshots on the app's detail page, add matching
+`<figure class="screenshot-figure">` entries to its `.screenshot-rail` — with `../` in front of
+the path, since detail pages sit one level down. Give every one `width`, `height` and
+`loading="lazy"`.
 
-Once a layout wins: delete `docs/preview/`, then remove the `Preview` nav item and the
-`New layout preview` footer link from every page under `docs/`, and the notice strip from
-`docs/index.html`. If the new layout is the winner instead, promote it and drop the `noindex`.
+### Image sizes
+
+App icons in `docs/assets/` are exported at **256px** — enough for the largest place they are
+shown (`.hero .app-icon` at 120px) on a 2× display. They were once up to 1024px and 751 KB
+each; the home page loads all five at once, so keep new ones at 256px.
+
