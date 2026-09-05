@@ -190,6 +190,7 @@
 .modal-shots {
   flex: 0 0 auto;
   display: flex;
+  align-items: center;   /* landscape shots centre against taller portrait ones */
   gap: 14px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -202,13 +203,14 @@
 .modal-shot { flex: 0 0 auto; scroll-snap-align: start; margin: 0; }
 .modal-shot img {
   display: block;
-  height: 220px;
+  height: min(220px, 25vh);
   width: auto;
   max-width: none;   /* overrides the base sheet's img { max-width: 100% } */
   border-radius: 12px;
   border: 1px solid var(--border);
   background: var(--soft);
 }
+.modal-shot.is-portrait img { height: min(320px, 36vh); }
 .modal-shot figcaption {
   color: var(--muted);
   font-size: 13px;
@@ -247,13 +249,15 @@
 @media (max-width: 720px) {
   .modal-head { padding: 24px 52px 16px 20px; }
   .modal-shots, .modal-meta, .modal-body, .modal-actions { padding-left: 20px; padding-right: 20px; }
-  .modal-shot img { height: 190px; }
+  .modal-shot img { height: min(190px, 22vh); }
+  .modal-shot.is-portrait img { height: min(270px, 32vh); }
 }
 @media (max-width: 640px) {
   #app-modal { width: 100%; max-height: 100vh; border-radius: 0; }
   .modal-inner { max-height: 100vh; }
   .modal-icon { width: 60px; height: 60px; border-radius: 14px; }
   .modal-shot img { height: 160px; }
+  .modal-shot.is-portrait img { height: 230px; }
   .modal-title { font-size: 22px; }
   .modal-actions .btn { flex: 1 1 100%; }
   .tile-grid { grid-template-columns: 1fr; }

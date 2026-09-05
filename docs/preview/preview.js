@@ -156,6 +156,20 @@
         img.src = shot.src;
         img.alt = shot.alt || (app.name + ' screenshot');
         img.loading = 'lazy';
+
+        /* Portrait phone and tablet shots get more height than landscape ones,
+           or they end up as unreadable slivers next to a Mac window. Intrinsic
+           w/h from the data reserves the right box before the image loads, so
+           the rail never jumps; without them, fall back to measuring on load. */
+        if (shot.w && shot.h) {
+          img.width = shot.w;
+          img.height = shot.h;
+          if (shot.h > shot.w) { fig.classList.add('is-portrait'); }
+        } else {
+          img.addEventListener('load', function () {
+            if (img.naturalHeight > img.naturalWidth) { fig.classList.add('is-portrait'); }
+          }, { once: true });
+        }
         fig.appendChild(img);
         if (shot.caption) { fig.appendChild(el('figcaption', null, shot.caption)); }
         rail.appendChild(fig);

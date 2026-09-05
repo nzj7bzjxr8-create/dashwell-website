@@ -124,9 +124,10 @@ the top of that file.
 
 ### Adding screenshots
 
-Drop images in `docs/preview/shots/<slug>/` and list them in that app's `shots` array. An app
-with no screenshots simply renders no screenshot rail — no placeholder, no gap — so they can be
-added one app at a time. Dashwell Portfolio Creator currently reuses the existing images in
+All five apps have App Store screenshots. Drop new images in `docs/preview/shots/<slug>/` and
+list them in that app's `shots` array, with `alt`, an optional `caption`, and the image's real
+`w`/`h` so the rail reserves space and does not jump. An app with no screenshots simply renders
+no rail — no placeholder, no gap. Dashwell Portfolio Creator reuses the existing images in
 `docs/findash/assets/`. See `docs/preview/shots/README.md`.
 
 ### Retiring the experiment
