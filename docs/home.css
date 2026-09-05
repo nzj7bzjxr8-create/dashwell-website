@@ -82,6 +82,9 @@
   gap: 20px;
   align-items: stretch;
 }
+/* Filtering sets tile.hidden; a class selector's display beats the [hidden]
+   attribute's UA default, so it has to be restated — same trap as .filter-bar. */
+.app-tile[hidden] { display: none; }
 .app-tile {
   display: flex;
   flex-direction: column;
