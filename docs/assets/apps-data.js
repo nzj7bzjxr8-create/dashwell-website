@@ -149,7 +149,7 @@ window.DASHWELL_CATALOG = [
       "Custom dashboards",
       "Local-first, private by default"
     ],
-    meta: { version: "1.2.2", platform: "Mac, iPad & iPhone" },
+    meta: { platform: "Mac, iPad & iPhone" },
     shots: [
       { src: "assets/shots/dashwell/dashwell-portfolio-mac.png",
         alt: "Dashwell portfolio dashboard on Mac with allocation donut, spend by category and recent entries",
