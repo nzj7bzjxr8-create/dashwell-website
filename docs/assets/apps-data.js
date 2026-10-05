@@ -132,23 +132,24 @@ window.DASHWELL_CATALOG = [
     name: "Dashwell",
     icon: "assets/dashwell-icon.png",
     tagline: "Your money assistant",
-    summary: "Apple Pay and Wallet tracking on iPhone, plus portfolio, banking, and custom dashboards — all synced across your devices with iCloud.",
+    summary: "Apple Pay and Wallet tracking on iPhone, plus portfolio, Roth and option planning, banking, and custom dashboards — all synced across your devices with iCloud.",
     families: ["money"],
     platforms: ["mac", "ipad", "iphone"],
     chips: ["Mac", "iPad", "iPhone"],
     description: [
       "Dashwell brings Apple Pay and Wallet transaction tracking to iPhone and syncs it with portfolio, banking, and custom dashboards across your devices.",
-      "Local-first and private by default — iCloud sync is yours, not ours."
+      "Plan Roth conversions and option exercises with educational planners under Stocks → Planning. Local-first and private by default — iCloud sync is yours, not ours."
     ],
     highlights: [
       "Apple Pay & Wallet tracking on iPhone",
       "iCloud sync across Mac, iPad & iPhone",
       "Portfolio & stocks",
+      "Roth & option planning",
       "Banking & budgets",
       "Custom dashboards",
       "Local-first, private by default"
     ],
-    meta: { platform: "Mac, iPad & iPhone" },
+    meta: { version: "1.2.2", platform: "Mac, iPad & iPhone" },
     shots: [
       { src: "assets/shots/dashwell/dashwell-portfolio-mac.png",
         alt: "Dashwell portfolio dashboard on Mac with allocation donut, spend by category and recent entries",

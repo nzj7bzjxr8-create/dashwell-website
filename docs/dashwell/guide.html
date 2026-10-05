@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Guide — Dashwell: Your Money Assistant</title>
-    <meta name="description" content="User guide for Dashwell: portfolio, stocks, banking, Apple Wallet capture, and custom CSV dashboards on Mac, iPad, and iPhone.">
+    <meta name="description" content="User guide for Dashwell: portfolio, stocks, Roth and option planning, banking, Apple Wallet capture, and custom CSV dashboards on Mac, iPad, and iPhone.">
     <link rel="canonical" href="https://dashwellsolutions.com/dashwell/guide.html">
     <meta property="og:title" content="User Guide — Dashwell: Your Money Assistant">
-    <meta property="og:description" content="User guide for Dashwell: portfolio, stocks, banking, Apple Wallet capture, and custom CSV dashboards on Mac, iPad, and iPhone.">
+    <meta property="og:description" content="User guide for Dashwell: portfolio, stocks, Roth and option planning, banking, Apple Wallet capture, and custom CSV dashboards on Mac, iPad, and iPhone.">
     <meta property="og:url" content="https://dashwellsolutions.com/dashwell/guide.html">
     <meta property="og:image" content="https://dashwellsolutions.com/assets/dashwell-logo.png">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
@@ -29,14 +29,15 @@
     <main class="container content">
         <p><a href="index.html">← Back to Dashwell</a></p>
         <h1>Dashwell User Guide</h1>
+        <p><strong>Version:</strong> 1.2.2</p>
         <p><strong>Platforms:</strong> macOS 15.6+ &nbsp;·&nbsp; iPadOS 17.0+ &nbsp;·&nbsp; iPhone</p>
-        <p>Dashwell brings together everything Dashwell LLC's apps have offered separately — portfolio tracking, custom CSV dashboards, and a full banking/budgeting mode with Apple Wallet capture — in one universal app for Mac, iPad, and iPhone.</p>
+        <p>Dashwell brings together everything Dashwell LLC's apps have offered separately — portfolio tracking, custom CSV dashboards, and a full banking/budgeting mode with Apple Wallet capture — plus Roth and option planning tools, in one universal app for Mac, iPad, and iPhone.</p>
 
         <section id="modes">
             <h2>Four Modes, One App</h2>
             <ul>
                 <li><strong>Portfolio</strong> — a consolidated, cross-mode dashboard: the "look here first" view pulling in widgets from Stocks, Banking, and Custom.</li>
-                <li><strong>Stocks</strong> — broker holdings, positions, options, dividends, and reports (this is the mode DashCSV and Dashwell Portfolio Creator built their name on).</li>
+                <li><strong>Stocks</strong> — broker holdings, positions, options, dividends, reports, and Planning tools (Roth Conversion and Option Exercise planners).</li>
                 <li><strong>Banking</strong> — cards and bank statements: a checkbook-style register per account, categorization, monthly/annual budgets, and reconcile — with optional automatic <strong>Apple Wallet</strong> capture on iPhone.</li>
                 <li><strong>Custom</strong> — turn any CSV into its own dashboard (inventories, collections, project trackers, and more). Included at no extra cost.</li>
             </ul>
@@ -46,6 +47,7 @@
             <h2>Getting Started</h2>
             <ol>
                 <li>Launch Dashwell on Mac, iPad, or iPhone</li>
+                <li>On first launch, read the short disclaimer, tick <strong>I have read and agree to the Terms of Use</strong>, and choose <strong>Agree and Continue</strong> — it's shown once per device</li>
                 <li><strong>Mac:</strong> if Dashwell Portfolio Creator or DashCSV is installed, portfolio, Custom Modes, and API keys copy over automatically on first launch</li>
                 <li><strong>iPad / iPhone:</strong> open your saved <code>.findash</code> or <code>.dashcsv</code> file (AirDrop, Files, or Import), or use Import from DashCSV or Dashwell Portfolio</li>
                 <li>Otherwise, import your first CSV — a broker positions export, a bank/card statement, or any data file — and Dashwell routes it to the right mode</li>
@@ -60,6 +62,16 @@
                 <li><strong>Banking:</strong> import a card or bank statement CSV — Apple Card exports are auto-detected — or connect Apple Wallet on iPhone for automatic capture</li>
                 <li><strong>Custom:</strong> import any CSV; Dashwell detects column types and a unique-key column automatically</li>
             </ul>
+        </section>
+
+        <section id="planning">
+            <h2>Planning — Roth Conversion &amp; Option Exercise</h2>
+            <p>Under <strong>Stocks → Planning</strong> (or on Mac, <strong>File → Roth Conversion Planner…</strong>), Dashwell includes educational planners that use your own numbers. Results are estimates under your assumptions — not tax, investment, or financial advice. Consult a CPA or qualified advisor before acting.</p>
+            <ul>
+                <li><strong>Roth Conversion Planner</strong> — based on published Vanguard research, it finds a break-even tax rate: the future rate above which converting traditional IRA money to a Roth comes out ahead under your assumptions. It can start from your imported account balances (IRA, taxable yield, gains, and cash), shows a dollar breakdown and a chart, and lets you save scenarios to compare. Export as CSV, HTML, Excel, or PDF, and pin a scenario to the Roth Break-Even dashboard widget. Dashwell is not affiliated with or endorsed by Vanguard.</li>
+                <li><strong>Option Exercise Planner</strong> — choose which expiring calls to sell to raise tax cash with the least realized gain, and see what exercising the rest costs in each account. Available as a dashboard widget or a full Planning page with a month-by-month view and the same export formats.</li>
+            </ul>
+            <p>On first launch, Dashwell shows a short disclaimer that the app is for education and planning. You can re-read it from Help → Disclaimer &amp; Terms… or About Dashwell.</p>
         </section>
 
         <section id="wallet-sync">
@@ -98,6 +110,10 @@
             <div class="faq-item">
                 <h3>Is Custom Mode a separate purchase?</h3>
                 <p>No. Dashwell is a single paid-up-front app — Custom Mode, the ETL Connector (Excel/SQLite/messy-CSV import), and Apple Wallet Bank Sync are all included, nothing to unlock separately.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is the Roth or Option planner tax advice?</h3>
+                <p>No. Planning tools are educational estimates based on the assumptions you enter. They do not recommend conversions, exercises, or trades. Always verify figures against your statements and consult a CPA or qualified advisor for tax decisions. See <a href="#planning">Planning</a> above.</p>
             </div>
             <div class="faq-item">
                 <h3>What happened to FinDash and DashCSV?</h3>
