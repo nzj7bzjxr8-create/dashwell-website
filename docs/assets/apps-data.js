@@ -176,7 +176,7 @@ window.DASHWELL_CATALOG = [
         alt: "Dashwell option exercise cost checked against each account's cash and money-market funds, with both accounts covered, and exercise cost by option",
         caption: "Cash check by account", w: 640, h: 400 },
       { src: "assets/shots/dashwell/dashwell-options-widget-mac.png",
-        alt: "Dashwell Portfolio dashboard on Mac with the Option Exercise Planner widget next to portfolio summary and performance widgets",
+        alt: "Dashwell Portfolio dashboard on Mac with the Option Exercise Planner widget next to portfolio allocation and events widgets",
         caption: "Option Exercise Planner widget", w: 640, h: 400 },
       { src: "assets/shots/dashwell/dashwell-banking-mac.png",
         alt: "Dashwell banking dashboard on Mac showing spend by category, budget versus actual and recent transactions",
