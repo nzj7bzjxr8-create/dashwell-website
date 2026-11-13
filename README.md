@@ -19,6 +19,9 @@ now 301-redirects it to the custom domain — it is no longer an independent fal
 | About | https://dashwellsolutions.com/about.html |
 | Contact | https://dashwellsolutions.com/contact.html |
 | Compare | https://dashwellsolutions.com/compare/ |
+| **Promo** (campaign kits + ASC paste) | https://dashwellsolutions.com/promo/ |
+| ↳ Retirement (Dashwell 1.4) | https://dashwellsolutions.com/promo/retirement/ |
+| ↳ App Store paste kit | https://dashwellsolutions.com/promo/retirement/app-store.html |
 | SheetStand | https://dashwellsolutions.com/sheetstand/ |
 | ↳ Support | https://dashwellsolutions.com/sheetstand/support.html |
 | FormatStand | https://dashwellsolutions.com/formatstand/ |
@@ -72,6 +75,8 @@ docs/
   index.html, about.html, contact.html, privacy.html, terms.html
   compare/, sheetstand/, formatstand/, dashwell/
   findash/, dashcsv/
+  promo/           # Dashwell Solutions promo hub (campaign kits + ASC paste)
+    retirement/    # first live campaign (Dashwell 1.4); more apps can follow
   style.css        # shared base sheet (see the warning below)
   home.css, home.js # home page grid + app detail popup
   assets/
@@ -79,6 +84,15 @@ docs/
     shots/<slug>/  # app screenshots
   preview/         # redirect stub; the trialled layout is now the home page
 ```
+
+### Promo hub (expandable across apps)
+
+`/promo/` is the **Dashwell Solutions** promo area (nav **Promo**). It starts with Dashwell
+campaigns (Retirement / 1.4 flyer + App Store Connect paste kit) and is meant to grow to
+**Portfolio / Dashboard Creator**, **DashCSV**, **SheetStand**, and **FormatStand** when those
+kits exist. Add a real campaign folder + hub card when ready; do **not** invent empty cards.
+See [`docs/promo/README.md`](docs/promo/README.md). Sitemap already lists `/promo/`.
+
 
 ### Adding a new app
 

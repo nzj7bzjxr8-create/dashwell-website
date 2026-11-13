@@ -265,7 +265,9 @@ matter if anything ever sent mail directly from the web host.
 is set, `docs/sheetstand/index.html` is `dashwellsolutions.com/sheetstand/`, not
 `/dashwell-website/sheetstand/`. This site's internal links are all relative
 (`../style.css`, `compare/`), so nothing broke. A site using absolute
-`/dashwell-website/…` paths would need every one rewritten.
+`/dashwell-website/…` paths would need every one rewritten. The same root hosts
+**Promo** at `dashwellsolutions.com/promo/` (campaign kits + App Store Connect
+paste pages for Dashwell Solutions apps — Dashwell-first, expandable later).
 
 **The github.io URL stops being an independent backup.** With a custom domain set,
 GitHub 301-redirects it to `dashwellsolutions.com`. If DNS for the domain breaks,

@@ -2,7 +2,7 @@
 
 Seniors / friends-and-family materials that lead with **Roth conversions** and **RMDs**. Option Exercise Planner is secondary or omitted.
 
-Linked from the public site: **[Promo hub](https://dashwellsolutions.com/promo/)** (nav item **Promo**).
+Linked from the public site: **[Promo hub](https://dashwellsolutions.com/promo/)** (nav item **Promo**). That hub is the Dashwell Solutions promo area (all apps over time); this kit is the first live Dashwell campaign.
 
 | File | Use |
 |------|-----|
