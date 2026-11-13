@@ -2,12 +2,15 @@
 
 Seniors / friends-and-family materials that lead with **Roth conversions** and **RMDs**. Option Exercise Planner is secondary or omitted.
 
+Linked from the public site: **[Promo hub](https://dashwellsolutions.com/promo/)** (nav item **Promo**).
+
 | File | Use |
 |------|-----|
 | `sms.txt` | 3 short SMS variants — paste into Messages |
 | `email.md` | Subject lines + body + disclaimer footer |
 | `flyer.html` | One-pager — open in a browser, **File → Print → Save as PDF** |
 | `social.md` | Short posts + one LinkedIn-length draft |
+| `app-store.html` | App Store Connect paste kit — Promotional Text, What’s New, Dashboard Creator promo fix, Asset Library checklist |
 
 ## Print the flyer to PDF
 
@@ -24,5 +27,3 @@ https://dashwellsolutions.com/dashwell/
 ## Disclaimer
 
 Every piece should keep the line that tools are **educational estimates, not tax advice** — consult a CPA. Do not imply the app computes your official RMD amount or replaces professional advice.
-
-This folder is **not** linked from the public site nav; it is for offline sharing.
