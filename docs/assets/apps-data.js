@@ -132,20 +132,20 @@ window.DASHWELL_CATALOG = [
     name: "Dashwell",
     icon: "assets/dashwell-icon.png",
     tagline: "Your money assistant",
-    summary: "Ready for iPhone Duo — Apple Pay and Wallet tracking on iPhone, plus portfolio, Roth and option planning, banking, and custom dashboards, synced across your devices with iCloud.",
+    summary: "Ready for iPhone Duo — Apple Pay and Wallet tracking on iPhone, plus portfolio, retirement planning (Roth, IRA distributions, options), banking, and custom dashboards, synced across your devices with iCloud.",
     families: ["money"],
     platforms: ["mac", "ipad", "iphone"],
     chips: ["Mac", "iPad", "iPhone"],
     description: [
       "Dashwell is ready for iPhone Duo: unfold for a full dual-pane workspace, fold for the familiar iPhone layout. Apple Pay and Wallet tracking on iPhone syncs with portfolio, banking, and custom dashboards across your devices.",
-      "Plan Roth conversions and option exercises with educational planners under Stocks → Planning. Local-first and private by default — iCloud sync is yours, not ours."
+      "Retirement planning: Roth Conversion Planner, IRA Distribution Tracker (conversions, RMDs, funding shortfall), and Option Exercise Planner under Stocks → Planning. Educational estimates, not tax advice. Local-first and private by default — iCloud sync is yours, not ours."
     ],
     highlights: [
       "Ready for iPhone Duo",
       "Apple Pay & Wallet tracking on iPhone",
       "iCloud sync across Mac, iPad & iPhone",
       "Portfolio & stocks",
-      "Roth & option planning",
+      "Retirement planning: Roth, IRA distributions, options",
       "Banking & budgets",
       "Custom dashboards",
       "Local-first, private by default"

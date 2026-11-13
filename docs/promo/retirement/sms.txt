@@ -1,0 +1,12 @@
+# Dashwell retirement promo — SMS drafts
+# Tone: personal, calm. Lead with Roth / RMDs. Soft ask. Not tax advice.
+# Links: https://dashwellsolutions.com/dashwell/  ·  App Store search “Dashwell Your Money Assistant”
+
+--- VARIANT A (Roth + RMD, ~320 chars) ---
+Hi — if you’re thinking about Roth conversions or RMDs this year, Dashwell on Mac/iPad/iPhone has planners that use your own numbers: break-even on a conversion, and a tracker for what’s come out / cash for the tax. Local on your device. Educational estimates, not tax advice. https://dashwellsolutions.com/dashwell/  Happy to help if useful.
+
+--- VARIANT B (shorter, ~240 chars) ---
+Quick note: Dashwell 1.4 has retirement planning tools — Roth conversion break-even and an IRA distribution tracker for conversions & RMDs across brokers. Private, one-time App Store purchase. Not tax advice. https://dashwellsolutions.com/dashwell/
+
+--- VARIANT C (soft ask, ~280 chars) ---
+Sharing something I built in case it’s useful: Dashwell helps you plan Roth conversions and track IRA withdrawals / RMDs with your own tax rates — on Mac, iPad, or iPhone. Estimates only; check with your CPA. Details: https://dashwellsolutions.com/dashwell/  No pressure either way.
